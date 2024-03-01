@@ -95,7 +95,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638441218018403853
+  platformSettingsDirtyTick: 638449029943443223
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -142,13 +142,13 @@ ScriptedImporter:
   spriteSheetImportData:
   - name: RoguelikeTilemapExport_0
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0, y: 0}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
-      y: 100
+      y: 164
       width: 32
       height: 32
     spriteID: a19439454aa1a354ab2dda1128cedaa9
@@ -162,13 +162,13 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   - name: RoguelikeTilemapExport_1
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0, y: 0}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 36
-      y: 100
+      y: 164
       width: 32
       height: 32
     spriteID: 5f31370a1eefd5748a632b9852ba3cea
@@ -182,13 +182,13 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   - name: RoguelikeTilemapExport_2
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0, y: 0}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 68
-      y: 100
+      y: 164
       width: 32
       height: 32
     spriteID: 3bef88d6056f9c043b1cd4e27c1cb91d
@@ -202,13 +202,13 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   - name: RoguelikeTilemapExport_3
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0, y: 0}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 100
-      y: 100
+      y: 164
       width: 32
       height: 32
     spriteID: 45570de1d6c8aec4aba024fd5c09b1fe
@@ -222,13 +222,13 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   - name: RoguelikeTilemapExport_4
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0, y: 0}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 132
-      y: 100
+      y: 164
       width: 32
       height: 32
     spriteID: b93153d7f5f1cad4ab2792664831c1f2
@@ -242,13 +242,13 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   - name: RoguelikeTilemapExport_5
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0, y: 0}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 164
-      y: 100
+      y: 164
       width: 32
       height: 32
     spriteID: 48c774c8ff56b474f88cd7be4ac6b692
@@ -262,13 +262,13 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   - name: RoguelikeTilemapExport_6
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0, y: 0}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 196
-      y: 100
+      y: 164
       width: 32
       height: 32
     spriteID: 27d94c99a5bab5248a5466c494aef773
@@ -282,13 +282,13 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   - name: RoguelikeTilemapExport_7
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0, y: 0}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
-      y: 68
+      y: 132
       width: 32
       height: 32
     spriteID: f8a6089ecdc21274dad8cbd4958de57d
@@ -302,13 +302,13 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   - name: RoguelikeTilemapExport_8
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0, y: 0}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 36
-      y: 68
+      y: 132
       width: 32
       height: 32
     spriteID: e70a930586021b447a326227cc6468c6
@@ -322,13 +322,13 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   - name: RoguelikeTilemapExport_9
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0, y: 0}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 68
-      y: 68
+      y: 132
       width: 32
       height: 32
     spriteID: 3eda28ed31fe0dd45acf1a71a6190139
@@ -342,13 +342,13 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   - name: RoguelikeTilemapExport_10
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0, y: 0}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 100
-      y: 68
+      y: 132
       width: 32
       height: 32
     spriteID: 65416542e0f0d694a8aed354c97eb228
@@ -362,13 +362,13 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   - name: RoguelikeTilemapExport_11
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0, y: 0}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 132
-      y: 68
+      y: 132
       width: 32
       height: 32
     spriteID: d8bf1fcb1c3c05b49b7cec828d9634fa
@@ -382,13 +382,13 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   - name: RoguelikeTilemapExport_12
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0, y: 0}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 164
-      y: 68
+      y: 132
       width: 32
       height: 32
     spriteID: cb758057b26b62647b9f5ebbd872be06
@@ -402,13 +402,13 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   - name: RoguelikeTilemapExport_13
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0, y: 0}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 196
-      y: 68
+      y: 132
       width: 32
       height: 32
     spriteID: f016cd8213660b74eaa73ab8d2b367d1
@@ -422,13 +422,13 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   - name: RoguelikeTilemapExport_14
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0, y: 0}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
-      y: 36
+      y: 100
       width: 32
       height: 32
     spriteID: e72892e02ab765c43b9c5ae38fbd3387
@@ -442,13 +442,13 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   - name: RoguelikeTilemapExport_15
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0, y: 0}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 36
-      y: 36
+      y: 100
       width: 32
       height: 32
     spriteID: 65cc6c296724828489b70e3592184746
@@ -462,13 +462,13 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   - name: RoguelikeTilemapExport_16
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0, y: 0}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 68
-      y: 36
+      y: 100
       width: 32
       height: 32
     spriteID: 1700c065b8388314faa088249692816c
@@ -482,13 +482,13 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   - name: RoguelikeTilemapExport_17
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0, y: 0}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 100
-      y: 36
+      y: 100
       width: 32
       height: 32
     spriteID: dc8bfa031fb4daa4a984dce7446ccf31
@@ -502,13 +502,13 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   - name: RoguelikeTilemapExport_18
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0, y: 0}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 132
-      y: 36
+      y: 100
       width: 32
       height: 32
     spriteID: 106b25b269872394b96add18e432eac7
@@ -522,13 +522,13 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   - name: RoguelikeTilemapExport_19
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0, y: 0}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 164
-      y: 36
+      y: 100
       width: 32
       height: 32
     spriteID: b9d3bb6318eae0e43a0a58ff8b68a610
@@ -542,13 +542,13 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   - name: RoguelikeTilemapExport_20
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0, y: 0}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 196
-      y: 36
+      y: 100
       width: 32
       height: 32
     spriteID: 2b5a035d749f049479888187c0ed2a2c
@@ -562,13 +562,13 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   - name: RoguelikeTilemapExport_21
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0, y: 0}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
-      y: 4
+      y: 68
       width: 32
       height: 32
     spriteID: 929ec0acf795e984cbdb4d28f4e0f362
@@ -582,13 +582,13 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   - name: RoguelikeTilemapExport_22
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0, y: 0}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 36
-      y: 4
+      y: 68
       width: 32
       height: 32
     spriteID: bf8b46e22490ab94faea794617bf42df
@@ -602,13 +602,13 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   - name: RoguelikeTilemapExport_23
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0, y: 0}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 68
-      y: 4
+      y: 68
       width: 32
       height: 32
     spriteID: 3d1d672eb2705f548b421131f8e0dd44
@@ -622,13 +622,13 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   - name: RoguelikeTilemapExport_24
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0, y: 0}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 100
-      y: 4
+      y: 68
       width: 32
       height: 32
     spriteID: 5e624b43ff818b54f93cb1f2ff3614c1
@@ -642,16 +642,96 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   - name: RoguelikeTilemapExport_25
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0, y: 0}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 132
-      y: 4
+      y: 68
       width: 32
       height: 32
     spriteID: dabcad042f290174aa840b0be0c41592
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  - name: RoguelikeTilemapExport_26
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 36
+      width: 32
+      height: 32
+    spriteID: 6eead076cef44ad498f81d1f3284855f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  - name: RoguelikeTilemapExport_27
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 36
+      y: 36
+      width: 32
+      height: 32
+    spriteID: 10596985cf1a41943bf4effce8473639
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  - name: RoguelikeTilemapExport_28
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 32
+      height: 32
+    spriteID: d2150b6df86a15545b059aa42c39c2e0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  - name: RoguelikeTilemapExport_29
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 36
+      y: 4
+      width: 32
+      height: 32
+    spriteID: 613f6b63e12ab2e4c9d61765a8e2e398
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -672,9 +752,9 @@ ScriptedImporter:
       frameIndex: 0
       cellRect:
         x: 0
-        y: 128
+        y: 64
         width: 224
-        height: 128
+        height: 192
       spriteId: d76746b1b8619b746b123028bbb80d60
     linkedCells: []
     parentIndex: -1
