@@ -13,6 +13,19 @@ public class PlayerScript : MonoBehaviour, IDamagable
     public PlayerControls PlayerControls { get; set; }
     public Animator animator { get; set; }
 
+    public enum PlayerDirectionEnum
+    {
+        E,
+        NE,
+        N,
+        NW,
+        W,
+        SW,
+        S,
+        SE
+    }
+    public PlayerDirectionEnum PlayerDirection { get; set; } = PlayerDirectionEnum.E;
+
     #region State Machine Variables
     public PlayerStateMachine StateMachine { get; set; }
     public PlayerWalkState WalkState { get; set; }
@@ -81,12 +94,28 @@ public class PlayerScript : MonoBehaviour, IDamagable
 
     private void AnimationTriggerEvent(AnimationTriggerType triggerType)
     {
-        //FILL IN AFTER STATE MACHINE
+
+        switch (triggerType)
+        {
+            case AnimationTriggerType.WalkNorth:
+                animator.SetTrigger("T_WalkNorth");
+                print("northtrigger");
+                break;
+            case AnimationTriggerType.WalkSouth:
+                animator.SetTrigger("T_WalkSouth"); print("southtrigger");
+                break;
+            case AnimationTriggerType.WalkEast:
+                break;
+            case AnimationTriggerType.WalkWest:
+                break;
+        }
     }
     public enum AnimationTriggerType
     {
-        PlayerDamaged,
-        Attack
+        WalkNorth,
+        WalkSouth,
+        WalkWest,
+        WalkEast
     }
     #endregion
 }
