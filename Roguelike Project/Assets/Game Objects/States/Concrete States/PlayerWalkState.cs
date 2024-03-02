@@ -31,6 +31,8 @@ public class PlayerWalkState : PlayerState
     {
         base.PhysicsUpdate();
         player.RB.velocity = new Vector2(moveDirection.x * player.moveSpeed, moveDirection.y * player.moveSpeed);
+        player.animator.SetFloat("XVelocity", moveDirection.x);
+        player.animator.SetFloat("YVelocity", moveDirection.y);
     }
 
     public override void AnimationTriggerEvent(PlayerScript.AnimationTriggerType triggerType)

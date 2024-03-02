@@ -11,6 +11,7 @@ public class PlayerScript : MonoBehaviour, IDamagable
     public int CurrentHealth { get; set; }
     public Rigidbody2D RB { get; set; }
     public PlayerControls PlayerControls { get; set; }
+    public Animator animator { get; set; }
 
     #region State Machine Variables
     public PlayerStateMachine StateMachine { get; set; }
@@ -60,6 +61,7 @@ public class PlayerScript : MonoBehaviour, IDamagable
         CurrentHealth = MaxHealth;
 
         RB = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
 
         StateMachine.Initialize(WalkState);
     }
