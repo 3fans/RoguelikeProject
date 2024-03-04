@@ -19,11 +19,4 @@ public class PlayerStateMachine
         CurrentPlayerState.EnterState();
 
     }
-
-
-
-
-
-
-
 }

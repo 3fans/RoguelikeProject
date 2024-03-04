@@ -1,43 +1,56 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using static IDirection;
 
-public class PlayerScript : MonoBehaviour, IDamagable, IDirection
+public class Enemy : MonoBehaviour, IDamagable, IDirection
 {
-
-
     [field: SerializeField] public int MaxHealth { get; set; } = 5;
     public int CurrentHealth { get; set; }
+    public IDirection.Direction8 direction8 { get; set; } = Direction8.E;
     public Rigidbody2D RB { get; set; }
-    public PlayerControls PlayerControls { get; set; }
     public Animator animator { get; set; }
     public SpriteRenderer spriteRenderer { get; set; }
 
-    public IDirection.Direction8 direction8 { get; set; } = IDirection.Direction8.E;
-
     #region State Machine Variables
-    public PlayerStateMachine StateMachine { get; set; }
-    public PlayerWalkState WalkState { get; set; }
-    
+    public EnemyStateMachine StateMachine { get; set; }
+    public EnemyWanderState WanderState { get; set; }
     #endregion
 
     #region Walk Variables
     public float moveSpeed = 3.0f;
-    public InputAction move;
     #endregion
 
-    private void OnEnable()
+    private void Awake()
     {
-        move = PlayerControls.Player.Move;
-        move.Enable();
+        StateMachine = new EnemyStateMachine();
+        
+        WanderState = new EnemyWanderState(this, StateMachine);
+        //Add enemy states instances public EnemyWalkState WalkState { get; set; }
+    }
+    void Start()
+    {
+        CurrentHealth = MaxHealth;
+
+        RB = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+
+        StateMachine.Initialize(WanderState);
+    }
+    private void Update()
+    {
+        StateMachine.CurrentEnemyState.FrameUpdate();
     }
 
-    private void OnDisable()
+    private void FixedUpdate()
     {
-        move.Disable();
+        StateMachine.CurrentEnemyState.PhysicsUpdate();
     }
+
     public void Damage(int damageAmount)
     {
         CurrentHealth -= damageAmount;
@@ -50,36 +63,7 @@ public class PlayerScript : MonoBehaviour, IDamagable, IDirection
 
     public void Die()
     {
-        
-    }
-    private void Awake()
-    {
-        PlayerControls = new PlayerControls();
 
-        StateMachine = new PlayerStateMachine();
-
-        WalkState = new PlayerWalkState(this, StateMachine);
-    }
-    // Start is called before the first frame update
-    void Start()
-    {
-        CurrentHealth = MaxHealth;
-
-        RB = GetComponent<Rigidbody2D>();
-        animator = GetComponent<Animator>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
-
-        StateMachine.Initialize(WalkState);
-    }
-
-    private void Update()
-    {
-        StateMachine.CurrentPlayerState.FrameUpdate();
-    }
-
-    private void FixedUpdate()
-    {
-        StateMachine.CurrentPlayerState.PhysicsUpdate();
     }
 
     public Direction8 VectorToDirection(Vector2 vector)
@@ -91,7 +75,7 @@ public class PlayerScript : MonoBehaviour, IDamagable, IDirection
         else
         {
             float angle = Mathf.Atan2(vector.y, vector.x) * Mathf.Rad2Deg;
-            
+
             if (vector.y < 0)
             {
                 angle = 360 + angle;
