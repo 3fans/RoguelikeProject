@@ -13,6 +13,7 @@ public class PlayerScript : MonoBehaviour, IDamagable, IDirection
     public Rigidbody2D RB { get; set; }
     public PlayerControls PlayerControls { get; set; }
     public Animator animator { get; set; }
+    public SpriteRenderer spriteRenderer { get; set; }
 
     public IDirection.Direction8 direction8 { get; set; } = IDirection.Direction8.E;
 
@@ -66,6 +67,7 @@ public class PlayerScript : MonoBehaviour, IDamagable, IDirection
 
         RB = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
 
         StateMachine.Initialize(WalkState);
     }
