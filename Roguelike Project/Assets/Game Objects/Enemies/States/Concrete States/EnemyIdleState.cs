@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class EnemyIdleState : EnemyState
 {
-    private float _timer = 1f;
     public EnemyIdleState(Enemy enemy, EnemyStateMachine enemyStateMachine) : base(enemy, enemyStateMachine)
     {
     }
@@ -23,16 +22,14 @@ public class EnemyIdleState : EnemyState
     public override void FrameUpdate()
     {
         base.FrameUpdate();
+        if (enemy.IsAggroed)
+        {
+            enemy.StateMachine.ChangeState(enemy.WanderState);
+        }
     }
 
     public override void PhysicsUpdate()
     {
         base.PhysicsUpdate();
-        _timer -= Time.deltaTime;
-        if (_timer < 0)
-        {
-            enemyStateMachine.ChangeState(enemy.WanderState);
-        }
-
     }
 }

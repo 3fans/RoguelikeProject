@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using static IDirection;
 
-public class Enemy : MonoBehaviour, IDamagable, IDirection
+public class Enemy : MonoBehaviour, IDamagable, IDirection, ITriggerCheckable
 {
 
     [field: SerializeField] public int MaxHealth { get; set; } = 5;
@@ -20,6 +20,8 @@ public class Enemy : MonoBehaviour, IDamagable, IDirection
     public EnemyStateMachine StateMachine { get; set; }
     public EnemyWanderState WanderState { get; set; }
     public EnemyIdleState IdleState { get; set; }
+    public bool IsAggroed { get; set; }
+    public bool IsWithinStrikingDistance { get; set; }
     #endregion
 
     #region Walk Variables
@@ -122,5 +124,15 @@ public class Enemy : MonoBehaviour, IDamagable, IDirection
                 return Direction8.SE;
             }
         }
+    }
+
+    public void SetAggroedStatus(bool isAggroed)
+    {
+        IsAggroed = isAggroed;
+    }
+
+    public void SetStrikingDistanceBool(bool isWithinStrikingDistance)
+    {
+        IsWithinStrikingDistance = isWithinStrikingDistance;
     }
 }
