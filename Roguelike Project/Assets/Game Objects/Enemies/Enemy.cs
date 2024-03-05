@@ -8,6 +8,7 @@ using static IDirection;
 
 public class Enemy : MonoBehaviour, IDamagable, IDirection
 {
+
     [field: SerializeField] public int MaxHealth { get; set; } = 5;
     public int CurrentHealth { get; set; }
     public IDirection.Direction8 direction8 { get; set; } = Direction8.E;
@@ -18,6 +19,7 @@ public class Enemy : MonoBehaviour, IDamagable, IDirection
     #region State Machine Variables
     public EnemyStateMachine StateMachine { get; set; }
     public EnemyWanderState WanderState { get; set; }
+    public EnemyIdleState IdleState { get; set; }
     #endregion
 
     #region Walk Variables
@@ -29,6 +31,8 @@ public class Enemy : MonoBehaviour, IDamagable, IDirection
         StateMachine = new EnemyStateMachine();
         
         WanderState = new EnemyWanderState(this, StateMachine);
+        IdleState = new EnemyIdleState(this,StateMachine);
+
         //Add enemy states instances public EnemyWalkState WalkState { get; set; }
     }
     void Start()
@@ -39,7 +43,7 @@ public class Enemy : MonoBehaviour, IDamagable, IDirection
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
 
-        StateMachine.Initialize(WanderState);
+        StateMachine.Initialize(IdleState);
     }
     private void Update()
     {

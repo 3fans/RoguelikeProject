@@ -1710,6 +1710,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RougelikePlayer1
       objectReference: {fileID: 0}
+    - target: {fileID: 3605498146914805130, guid: 6772d3e1dd9068649977ff8fdb6ff0e2, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 4604007002029952495, guid: 6772d3e1dd9068649977ff8fdb6ff0e2, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.52

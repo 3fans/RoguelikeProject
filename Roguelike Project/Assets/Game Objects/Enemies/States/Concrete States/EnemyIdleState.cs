@@ -1,17 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 
-public class EnemyWanderState : EnemyState
+public class EnemyIdleState : EnemyState
 {
-    public EnemyWanderState(Enemy enemy, EnemyStateMachine enemyStateMachine) : base(enemy, enemyStateMachine)
+    private float _timer = 1f;
+    public EnemyIdleState(Enemy enemy, EnemyStateMachine enemyStateMachine) : base(enemy, enemyStateMachine)
     {
     }
-
     public override void EnterState()
     {
         base.EnterState();
-        Debug.Log("Wandering");
+        Debug.Log("Idlig");
     }
 
     public override void ExitState()
@@ -27,5 +28,11 @@ public class EnemyWanderState : EnemyState
     public override void PhysicsUpdate()
     {
         base.PhysicsUpdate();
+        _timer -= Time.deltaTime;
+        if (_timer < 0)
+        {
+            enemyStateMachine.ChangeState(enemy.WanderState);
+        }
+
     }
 }

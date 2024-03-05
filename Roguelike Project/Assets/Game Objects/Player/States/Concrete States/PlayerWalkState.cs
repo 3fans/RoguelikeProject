@@ -53,13 +53,8 @@ public class PlayerWalkState : PlayerState
                     player.animator.SetTrigger(TWalkE);
                     player.spriteRenderer.flipX = true;
                     break;
-
-
-
             }
         }
-        
-        Debug.Log(player.direction8);
     }
 
 }
