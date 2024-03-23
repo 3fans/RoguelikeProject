@@ -20,12 +20,13 @@ public class Enemy : MonoBehaviour, IDamagable, IDirection, ITriggerCheckable
     public EnemyStateMachine StateMachine { get; set; }
     public EnemyWanderState WanderState { get; set; }
     public EnemyIdleState IdleState { get; set; }
+    public PlayerScript Player { get; set; }
     public bool IsAggroed { get; set; }
     public bool IsWithinStrikingDistance { get; set; }
     #endregion
 
     #region Walk Variables
-    public float moveSpeed = 3.0f;
+    public float moveSpeed = 0.1f;
     #endregion
 
     private void Awake()
@@ -44,6 +45,7 @@ public class Enemy : MonoBehaviour, IDamagable, IDirection, ITriggerCheckable
         RB = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        Player = FindFirstObjectByType<PlayerScript>();
 
         StateMachine.Initialize(IdleState);
     }

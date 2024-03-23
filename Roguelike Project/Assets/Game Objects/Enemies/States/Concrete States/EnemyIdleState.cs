@@ -11,7 +11,6 @@ public class EnemyIdleState : EnemyState
     public override void EnterState()
     {
         base.EnterState();
-        Debug.Log("Idlig");
     }
 
     public override void ExitState()
