@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,6 +14,7 @@ public class PlayerWalkState : PlayerState
     }
 
     Vector2 moveDirection = Vector2.zero;
+    bool isAttack = false;
 
     public override void EnterState()
     {
@@ -28,11 +30,16 @@ public class PlayerWalkState : PlayerState
     {
         base.FrameUpdate();
         moveDirection = player.move.ReadValue<Vector2>();
+        isAttack = player.attack.IsPressed();
     }
 
     public override void PhysicsUpdate()
     {
         base.PhysicsUpdate();
+        if (isAttack)
+        {
+            GameObject.Instantiate(player.projectile, player.RB.transform);
+        }
         player.RB.velocity = new Vector2(moveDirection.x * player.moveSpeed, moveDirection.y * player.moveSpeed);
         if (moveDirection != Vector2.zero)
         {

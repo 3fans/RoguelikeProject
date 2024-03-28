@@ -14,6 +14,7 @@ public class PlayerScript : MonoBehaviour, IDamagable, IDirection
     public PlayerControls PlayerControls { get; set; }
     public Animator animator { get; set; }
     public SpriteRenderer spriteRenderer { get; set; }
+    [field: SerializeField] public GameObject projectile {  get; set; } 
 
     public IDirection.Direction8 direction8 { get; set; } = IDirection.Direction8.E;
 
@@ -26,12 +27,17 @@ public class PlayerScript : MonoBehaviour, IDamagable, IDirection
     #region Walk Variables
     public float moveSpeed = 3.0f;
     public InputAction move;
+    public InputAction attack;
     #endregion
+
+
 
     private void OnEnable()
     {
         move = PlayerControls.Player.Move;
+        attack = PlayerControls.Player.Fire;
         move.Enable();
+        attack.Enable();
     }
 
     private void OnDisable()
@@ -81,7 +87,7 @@ public class PlayerScript : MonoBehaviour, IDamagable, IDirection
     {
         StateMachine.CurrentPlayerState.PhysicsUpdate();
     }
-
+    
     public Direction8 VectorToDirection(Vector2 vector)
     {
         if (vector == Vector2.zero)
