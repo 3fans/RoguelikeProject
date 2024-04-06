@@ -21,6 +21,7 @@ public class PlayerScript : MonoBehaviour, IDamagable, IDirection
     #region State Machine Variables
     public PlayerStateMachine StateMachine { get; set; }
     public PlayerWalkState WalkState { get; set; }
+    public PlayerAttacKState AttackState { get; set; }
     
     #endregion
 
@@ -63,8 +64,9 @@ public class PlayerScript : MonoBehaviour, IDamagable, IDirection
         PlayerControls = new PlayerControls();
 
         StateMachine = new PlayerStateMachine();
-
+     
         WalkState = new PlayerWalkState(this, StateMachine);
+        AttackState = new PlayerAttacKState(this, StateMachine);
     }
     // Start is called before the first frame update
     void Start()

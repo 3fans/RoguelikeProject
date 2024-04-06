@@ -38,7 +38,8 @@ public class PlayerWalkState : PlayerState
         base.PhysicsUpdate();
         if (isAttack)
         {
-            GameObject.Instantiate(player.projectile, player.RB.transform);
+            player.StateMachine.ChangeState(player.AttackState);
+            
         }
         player.RB.velocity = new Vector2(moveDirection.x * player.moveSpeed, moveDirection.y * player.moveSpeed);
         if (moveDirection != Vector2.zero)
