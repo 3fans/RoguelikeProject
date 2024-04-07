@@ -13,6 +13,9 @@ public class Projectile : MonoBehaviour, IDirection
     public PlayerScript Player;
     private float projSpeed = 5;
 
+    private float deathTime = 0.2f;
+    bool isDying = false;
+
     public IDirection.Direction8 direction8 { get; set; }
 
     public IDirection.Direction8 VectorToDirection(Vector2 vector)
@@ -44,16 +47,36 @@ public class Projectile : MonoBehaviour, IDirection
     // Update is called once per frame
     void Update()
     {
-
+        if (isDying)
+        {
+            deathTime -= Time.deltaTime;
+            if (deathTime < 0)
+            {
+                Destroy(gameObject);
+            }
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Enemy"))
         {
-            Debug.Log("enemy");
             
-            Destroy(gameObject);
+            IDamagable e = collision.GetComponent<IDamagable>();
+            if (e != null)
+            {
+                e.Damage(2f);
+            }
+
+            animator.SetTrigger("Die");
+            isDying = true;
+            RB.velocity = Vector2.zero;
+        }
+        if (collision.CompareTag("Wall"))
+        {
+            animator.SetTrigger("Die");
+            isDying = true;
+            RB.velocity = Vector2.zero;
         }
     }
 

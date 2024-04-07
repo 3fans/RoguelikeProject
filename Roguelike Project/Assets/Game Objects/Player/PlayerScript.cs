@@ -8,8 +8,8 @@ public class PlayerScript : MonoBehaviour, IDamagable, IDirection
 {
 
 
-    [field: SerializeField] public int MaxHealth { get; set; } = 5;
-    public int CurrentHealth { get; set; }
+    [field: SerializeField] public float MaxHealth { get; set; } = 5;
+    public float CurrentHealth { get; set; }
     public Rigidbody2D RB { get; set; }
     public PlayerControls PlayerControls { get; set; }
     public Animator animator { get; set; }
@@ -31,6 +31,8 @@ public class PlayerScript : MonoBehaviour, IDamagable, IDirection
     public InputAction attack;
     #endregion
 
+    public float abilityTimer = 0;
+    public float shootCooldown = 1.5f;
 
 
     private void OnEnable()
@@ -45,7 +47,7 @@ public class PlayerScript : MonoBehaviour, IDamagable, IDirection
     {
         move.Disable();
     }
-    public void Damage(int damageAmount)
+    public void Damage(float damageAmount)
     {
         CurrentHealth -= damageAmount;
 
@@ -88,6 +90,15 @@ public class PlayerScript : MonoBehaviour, IDamagable, IDirection
     private void FixedUpdate()
     {
         StateMachine.CurrentPlayerState.PhysicsUpdate();
+    }
+
+    public void AbilityTimerCountDown()
+    {
+        abilityTimer -= Time.deltaTime;
+        if (abilityTimer <= 0)
+        {
+            abilityTimer = 0;
+        }
     }
     
     public Direction8 VectorToDirection(Vector2 vector)
@@ -137,9 +148,13 @@ public class PlayerScript : MonoBehaviour, IDamagable, IDirection
             {
                 return Direction8.S;
             }
-            else
+            else if ((angle >= a + 6 * A && angle < a + 7 * A))
             {
                 return Direction8.SE;
+            }
+            else
+            {
+                return Direction8.E;
             }
         }
     }

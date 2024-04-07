@@ -31,12 +31,14 @@ public class PlayerWalkState : PlayerState
         base.FrameUpdate();
         moveDirection = player.move.ReadValue<Vector2>();
         isAttack = player.attack.IsPressed();
+        player.AbilityTimerCountDown();
+
     }
 
     public override void PhysicsUpdate()
     {
         base.PhysicsUpdate();
-        if (isAttack)
+        if (isAttack && player.abilityTimer <= 0)
         {
             player.StateMachine.ChangeState(player.AttackState);
             

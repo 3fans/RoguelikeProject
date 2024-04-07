@@ -9,8 +9,8 @@ using static IDirection;
 public class Enemy : MonoBehaviour, IDamagable, IDirection, ITriggerCheckable
 {
 
-    [field: SerializeField] public int MaxHealth { get; set; } = 5;
-    public int CurrentHealth { get; set; }
+    [field: SerializeField] public float MaxHealth { get; set; } = 5;
+    public float CurrentHealth { get; set; }
     public IDirection.Direction8 direction8 { get; set; } = Direction8.E;
     public Rigidbody2D RB { get; set; }
     public Animator animator { get; set; }
@@ -20,6 +20,7 @@ public class Enemy : MonoBehaviour, IDamagable, IDirection, ITriggerCheckable
     public EnemyStateMachine StateMachine { get; set; }
     public EnemyWanderState WanderState { get; set; }
     public EnemyIdleState IdleState { get; set; }
+    public EnemyDamagedState DamagedState { get; set; }
     public PlayerScript Player { get; set; }
     public bool IsAggroed { get; set; }
     public bool IsWithinStrikingDistance { get; set; }
@@ -35,6 +36,7 @@ public class Enemy : MonoBehaviour, IDamagable, IDirection, ITriggerCheckable
         
         WanderState = new EnemyWanderState(this, StateMachine);
         IdleState = new EnemyIdleState(this,StateMachine);
+        DamagedState = new EnemyDamagedState(this,StateMachine);
 
         //Add enemy states instances public EnemyWalkState WalkState { get; set; }
     }
@@ -59,19 +61,20 @@ public class Enemy : MonoBehaviour, IDamagable, IDirection, ITriggerCheckable
         StateMachine.CurrentEnemyState.PhysicsUpdate();
     }
 
-    public void Damage(int damageAmount)
+    public void Damage(float damageAmount)
     {
         CurrentHealth -= damageAmount;
-
         if (CurrentHealth <= 0)
         {
             Die();
         }
+        StateMachine.ChangeState(DamagedState);
     }
 
     public void Die()
     {
-
+        //Death animation
+        Destroy(gameObject);
     }
 
     public Direction8 VectorToDirection(Vector2 vector)

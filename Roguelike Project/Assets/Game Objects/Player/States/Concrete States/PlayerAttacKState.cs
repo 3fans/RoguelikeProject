@@ -13,6 +13,8 @@ public class PlayerAttacKState : PlayerState
         base.EnterState();
 
         GameObject.Instantiate(player.projectile, player.RB.transform);
+
+        player.abilityTimer = player.shootCooldown;
         player.StateMachine.ChangeState(player.WalkState);
     }
 

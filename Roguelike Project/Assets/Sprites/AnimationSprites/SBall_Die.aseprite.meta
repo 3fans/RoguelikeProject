@@ -121,14 +121,14 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: SBall_Die_Frame_0
     originalName: 
-    pivot: {x: 0.7857143, y: -2.1666667}
+    pivot: {x: 0.5, y: -2.1666667}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 88
-      width: 14
+      x: 26
+      y: 26
+      width: 6
       height: 6
     spriteID: a32cc9782d3843143bdd1a99a790a411
     spriteBone: []
@@ -138,18 +138,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 88}
+    uvTransform: {x: 26, y: 26}
   - name: SBall_Die_Frame_1
     originalName: 
-    pivot: {x: 0.7857143, y: -2.1666667}
+    pivot: {x: 0.5, y: -1.1}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
-      y: 102
-      width: 14
-      height: 6
+      y: 48
+      width: 10
+      height: 10
     spriteID: dbdef048da449c24dae3b24fe382da6f
     spriteBone: []
     spriteOutline: []
@@ -158,148 +158,8 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 102}
+    uvTransform: {x: 4, y: 48}
   - name: SBall_Die_Frame_2
-    originalName: 
-    pivot: {x: 0.7692308, y: -2.1666667}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 116
-      width: 13
-      height: 6
-    spriteID: 7680a7fdc89babc4bb287e1c2f9c54f7
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 116}
-  - name: SBall_Die_Frame_3
-    originalName: 
-    pivot: {x: 0.5, y: -2.1666667}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 26
-      y: 4
-      width: 6
-      height: 6
-    spriteID: e16040e70b9037e46802b8208ddb27bd
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 26, y: 4}
-  - name: SBall_Die_Frame_4
-    originalName: 
-    pivot: {x: 0.5, y: -2.1666667}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 26
-      y: 18
-      width: 6
-      height: 6
-    spriteID: ad17723f99255ac4686ea93e31f0f8a6
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 26, y: 18}
-  - name: SBall_Die_Frame_5
-    originalName: 
-    pivot: {x: 0.5, y: -2.1666667}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 26
-      y: 32
-      width: 6
-      height: 6
-    spriteID: d01aa0c5da52c644abc168eeacd5bc3c
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 26, y: 32}
-  - name: SBall_Die_Frame_6
-    originalName: 
-    pivot: {x: 0.5, y: -2.1666667}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 26
-      y: 46
-      width: 6
-      height: 6
-    spriteID: 2bb1a9e0ad27e2145a77ccfc8aff10ce
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 26, y: 46}
-  - name: SBall_Die_Frame_7
-    originalName: 
-    pivot: {x: 0.5, y: -2.1666667}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 26
-      y: 60
-      width: 6
-      height: 6
-    spriteID: ea490dc6be6b75f4ea10c90f4ad9eac8
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 26, y: 60}
-  - name: SBall_Die_Frame_8
-    originalName: 
-    pivot: {x: 0.5, y: -1.1}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 70
-      width: 10
-      height: 10
-    spriteID: c3075b52d04b0bd44b40c5c67f9eaeac
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 70}
-  - name: SBall_Die_Frame_9
     originalName: 
     pivot: {x: 0.5, y: -0.6428572}
     alignment: 9
@@ -310,7 +170,7 @@ ScriptedImporter:
       y: 4
       width: 14
       height: 14
-    spriteID: 2f0ab68d066b2d64b9ee6185b008d940
+    spriteID: 7680a7fdc89babc4bb287e1c2f9c54f7
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -319,7 +179,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
-  - name: SBall_Die_Frame_10
+  - name: SBall_Die_Frame_3
     originalName: 
     pivot: {x: 0.5, y: -0.6428572}
     alignment: 9
@@ -330,7 +190,7 @@ ScriptedImporter:
       y: 26
       width: 14
       height: 14
-    spriteID: 3e353f921b3ecfc498b12102e79e9be4
+    spriteID: e16040e70b9037e46802b8208ddb27bd
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -339,18 +199,18 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 26}
-  - name: SBall_Die_Frame_11
+  - name: SBall_Die_Frame_4
     originalName: 
     pivot: {x: 0.5, y: -0.6428572}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 48
+      x: 26
+      y: 4
       width: 14
       height: 14
-    spriteID: 3fb182109fa9d35498d147cda324a425
+    spriteID: ad17723f99255ac4686ea93e31f0f8a6
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -358,7 +218,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 48}
+    uvTransform: {x: 26, y: 4}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
@@ -371,99 +231,43 @@ ScriptedImporter:
     - name: SBall_Die_Frame_0
       frameIndex: 0
       cellRect:
-        x: 5
+        x: 13
         y: 13
-        width: 14
+        width: 6
         height: 6
       spriteId: a32cc9782d3843143bdd1a99a790a411
     - name: SBall_Die_Frame_1
       frameIndex: 1
       cellRect:
-        x: 5
-        y: 13
-        width: 14
-        height: 6
-      spriteId: dbdef048da449c24dae3b24fe382da6f
-    - name: SBall_Die_Frame_2
-      frameIndex: 2
-      cellRect:
-        x: 6
-        y: 13
-        width: 13
-        height: 6
-      spriteId: 7680a7fdc89babc4bb287e1c2f9c54f7
-    - name: SBall_Die_Frame_3
-      frameIndex: 3
-      cellRect:
-        x: 13
-        y: 13
-        width: 6
-        height: 6
-      spriteId: e16040e70b9037e46802b8208ddb27bd
-    - name: SBall_Die_Frame_4
-      frameIndex: 4
-      cellRect:
-        x: 13
-        y: 13
-        width: 6
-        height: 6
-      spriteId: ad17723f99255ac4686ea93e31f0f8a6
-    - name: SBall_Die_Frame_5
-      frameIndex: 5
-      cellRect:
-        x: 13
-        y: 13
-        width: 6
-        height: 6
-      spriteId: d01aa0c5da52c644abc168eeacd5bc3c
-    - name: SBall_Die_Frame_6
-      frameIndex: 6
-      cellRect:
-        x: 13
-        y: 13
-        width: 6
-        height: 6
-      spriteId: 2bb1a9e0ad27e2145a77ccfc8aff10ce
-    - name: SBall_Die_Frame_7
-      frameIndex: 7
-      cellRect:
-        x: 13
-        y: 13
-        width: 6
-        height: 6
-      spriteId: ea490dc6be6b75f4ea10c90f4ad9eac8
-    - name: SBall_Die_Frame_8
-      frameIndex: 8
-      cellRect:
         x: 11
         y: 11
         width: 10
         height: 10
-      spriteId: c3075b52d04b0bd44b40c5c67f9eaeac
-    - name: SBall_Die_Frame_9
-      frameIndex: 9
+      spriteId: dbdef048da449c24dae3b24fe382da6f
+    - name: SBall_Die_Frame_2
+      frameIndex: 2
       cellRect:
         x: 9
         y: 9
         width: 14
         height: 14
-      spriteId: 2f0ab68d066b2d64b9ee6185b008d940
-    - name: SBall_Die_Frame_10
-      frameIndex: 10
+      spriteId: 7680a7fdc89babc4bb287e1c2f9c54f7
+    - name: SBall_Die_Frame_3
+      frameIndex: 3
       cellRect:
         x: 9
         y: 9
         width: 14
         height: 14
-      spriteId: 3e353f921b3ecfc498b12102e79e9be4
-    - name: SBall_Die_Frame_11
-      frameIndex: 11
+      spriteId: e16040e70b9037e46802b8208ddb27bd
+    - name: SBall_Die_Frame_4
+      frameIndex: 4
       cellRect:
         x: 9
         y: 9
         width: 14
         height: 14
-      spriteId: 3fb182109fa9d35498d147cda324a425
+      spriteId: ad17723f99255ac4686ea93e31f0f8a6
     linkedCells: []
     parentIndex: -1
   platformSettings:
