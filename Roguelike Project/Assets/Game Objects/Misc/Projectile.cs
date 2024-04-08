@@ -1,8 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Experimental.GraphView;
-using UnityEditor.UI;
 using UnityEngine;
 
 public class Projectile : MonoBehaviour, IDirection
