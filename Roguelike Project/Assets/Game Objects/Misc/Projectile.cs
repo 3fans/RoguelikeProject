@@ -63,7 +63,7 @@ public class Projectile : MonoBehaviour, IDirection
             IDamagable e = collision.GetComponent<IDamagable>();
             if (e != null)
             {
-                e.Damage(2f);
+                e.Damage(Player.shootDamage);
             }
 
             animator.SetTrigger("Die");

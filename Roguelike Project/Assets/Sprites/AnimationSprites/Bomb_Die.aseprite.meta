@@ -1,0 +1,520 @@
+fileFormatVersion: 2
+guid: c89cba60ffa6ea741a16283c91fa19df
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+    swizzle: 50462976
+    isReadable: 0
+    streamingMipmaps: 0
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    ignoreMipmapLimit: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 32
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    cookieMode: 0
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  previousAsepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  asepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  importFileNodeState: 1
+  platformSettingsDirtyTick: 638481714861655280
+  textureAssetName: 
+  singleSpriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  animatedSpriteImportData:
+  - name: Bomb_Die_Frame_0
+    originalName: 
+    pivot: {x: 0.5, y: -1.1}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 60
+      width: 10
+      height: 10
+    spriteID: 8974159a43bbf664599dcdbf9dccc897
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 60}
+  - name: Bomb_Die_Frame_1
+    originalName: 
+    pivot: {x: 0.5, y: -1.1}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 78
+      width: 10
+      height: 10
+    spriteID: 5698be0c345f0ee428e0f1964bf39201
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 78}
+  - name: Bomb_Die_Frame_2
+    originalName: 
+    pivot: {x: 0.5, y: -1.1}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 96
+      width: 10
+      height: 10
+    spriteID: 2f0671ddafe914044a4b875ab796aa53
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 96}
+  - name: Bomb_Die_Frame_3
+    originalName: 
+    pivot: {x: 0.5, y: -1.1}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 114
+      width: 10
+      height: 10
+    spriteID: 845497553f208974e8196cb2cece80ac
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 114}
+  - name: Bomb_Die_Frame_4
+    originalName: 
+    pivot: {x: 0.5, y: -1.1}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 38
+      y: 4
+      width: 10
+      height: 10
+    spriteID: e7b28633cccdb1a46b3bd7b348ad1991
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 38, y: 4}
+  - name: Bomb_Die_Frame_5
+    originalName: 
+    pivot: {x: 0.5, y: -1.1}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 38
+      y: 22
+      width: 10
+      height: 10
+    spriteID: 85a251caa8473134bb24d19c177df0a3
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 38, y: 22}
+  - name: Bomb_Die_Frame_6
+    originalName: 
+    pivot: {x: 0.5, y: -1.1}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 38
+      y: 40
+      width: 10
+      height: 10
+    spriteID: 9931a4194e48e5041aa57553fceba88e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 38, y: 40}
+  - name: Bomb_Die_Frame_7
+    originalName: 
+    pivot: {x: 0.5, y: -1.1}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 38
+      y: 58
+      width: 10
+      height: 10
+    spriteID: e03d57c1b8b9a3e4fb6e6c60df0b680c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 38, y: 58}
+  - name: Bomb_Die_Frame_8
+    originalName: 
+    pivot: {x: 0.5, y: -1.1}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 38
+      y: 76
+      width: 10
+      height: 10
+    spriteID: 8441de0cb7d7dc7498a9d8ce8e99d430
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 38, y: 76}
+  - name: Bomb_Die_Frame_9
+    originalName: 
+    pivot: {x: 0.5, y: -1.1}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 38
+      y: 94
+      width: 10
+      height: 10
+    spriteID: 01a46af4697caca4e82d965ca3c08626
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 38, y: 94}
+  - name: Bomb_Die_Frame_10
+    originalName: 
+    pivot: {x: 0.5, y: -0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 36
+      width: 16
+      height: 16
+    spriteID: f4b647e9000dbe648ad10e958482c0e3
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 36}
+  - name: Bomb_Die_Frame_11
+    originalName: 
+    pivot: {x: 0.5, y: -0.16666667}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 26
+      height: 24
+    spriteID: 06e1c21ca25be124dbd65171d3674cdb
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
+  spriteSheetImportData: []
+  asepriteLayers:
+  - layerIndex: 0
+    guid: -2069641867
+    name: Bomb_Die
+    layerFlags: 0
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Bomb_Die_Frame_0
+      frameIndex: 0
+      cellRect:
+        x: 11
+        y: 11
+        width: 10
+        height: 10
+      spriteId: 8974159a43bbf664599dcdbf9dccc897
+    - name: Bomb_Die_Frame_1
+      frameIndex: 1
+      cellRect:
+        x: 11
+        y: 11
+        width: 10
+        height: 10
+      spriteId: 5698be0c345f0ee428e0f1964bf39201
+    - name: Bomb_Die_Frame_2
+      frameIndex: 2
+      cellRect:
+        x: 11
+        y: 11
+        width: 10
+        height: 10
+      spriteId: 2f0671ddafe914044a4b875ab796aa53
+    - name: Bomb_Die_Frame_3
+      frameIndex: 3
+      cellRect:
+        x: 11
+        y: 11
+        width: 10
+        height: 10
+      spriteId: 845497553f208974e8196cb2cece80ac
+    - name: Bomb_Die_Frame_4
+      frameIndex: 4
+      cellRect:
+        x: 11
+        y: 11
+        width: 10
+        height: 10
+      spriteId: e7b28633cccdb1a46b3bd7b348ad1991
+    - name: Bomb_Die_Frame_5
+      frameIndex: 5
+      cellRect:
+        x: 11
+        y: 11
+        width: 10
+        height: 10
+      spriteId: 85a251caa8473134bb24d19c177df0a3
+    - name: Bomb_Die_Frame_6
+      frameIndex: 6
+      cellRect:
+        x: 11
+        y: 11
+        width: 10
+        height: 10
+      spriteId: 9931a4194e48e5041aa57553fceba88e
+    - name: Bomb_Die_Frame_7
+      frameIndex: 7
+      cellRect:
+        x: 11
+        y: 11
+        width: 10
+        height: 10
+      spriteId: e03d57c1b8b9a3e4fb6e6c60df0b680c
+    - name: Bomb_Die_Frame_8
+      frameIndex: 8
+      cellRect:
+        x: 11
+        y: 11
+        width: 10
+        height: 10
+      spriteId: 8441de0cb7d7dc7498a9d8ce8e99d430
+    - name: Bomb_Die_Frame_9
+      frameIndex: 9
+      cellRect:
+        x: 11
+        y: 11
+        width: 10
+        height: 10
+      spriteId: 01a46af4697caca4e82d965ca3c08626
+    - name: Bomb_Die_Frame_10
+      frameIndex: 10
+      cellRect:
+        x: 8
+        y: 8
+        width: 16
+        height: 16
+      spriteId: f4b647e9000dbe648ad10e958482c0e3
+    - name: Bomb_Die_Frame_11
+      frameIndex: 11
+      cellRect:
+        x: 3
+        y: 4
+        width: 26
+        height: 24
+      spriteId: 06e1c21ca25be124dbd65171d3674cdb
+    linkedCells: []
+    parentIndex: -1
+  platformSettings:
+  - name: DefaultTexturePlatform
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Standalone
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Server
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: WebGL
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  secondarySpriteTextures: []
+  spritePackingTag: 
+  canvasSize: {x: 32, y: 32}

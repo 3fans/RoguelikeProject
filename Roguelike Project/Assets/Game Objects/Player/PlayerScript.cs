@@ -33,6 +33,8 @@ public class PlayerScript : MonoBehaviour, IDamagable, IDirection
 
     public float abilityTimer = 0;
     public float shootCooldown = 1.5f;
+    public float shootDamage = 2f;
+    public float bombDamage = 4f;
 
 
     private void OnEnable()
@@ -50,6 +52,7 @@ public class PlayerScript : MonoBehaviour, IDamagable, IDirection
     public void Damage(float damageAmount)
     {
         CurrentHealth -= damageAmount;
+        Debug.Log(CurrentHealth);
 
         if (CurrentHealth <= 0)
         {

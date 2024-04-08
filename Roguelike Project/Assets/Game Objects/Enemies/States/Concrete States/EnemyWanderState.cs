@@ -24,6 +24,11 @@ public class EnemyWanderState : EnemyState
     public override void FrameUpdate()
     {
         base.FrameUpdate();
+        if (enemy.IsWithinStrikingDistance)
+        {
+            enemy.StateMachine.ChangeState(enemy.AttackState);
+        }
+
     }
 
     public override void PhysicsUpdate()
@@ -31,17 +36,18 @@ public class EnemyWanderState : EnemyState
         base.PhysicsUpdate();
 
         moveDirection = (enemy.Player.RB.position - enemy.RB.position).normalized;
-
+        /*
         if (enemy.direction8 == enemy.VectorToDirection(moveDirection))
         {
             Vector2 a = enemy.RB.velocity.normalized;
             enemy.RB.velocity = new Vector2(a.x * enemy.moveSpeed, a.y * enemy.moveSpeed);
         }
-        else
-        {
-        enemy.RB.velocity = new Vector2(moveDirection.x * enemy.moveSpeed, moveDirection.y * enemy.moveSpeed);
-        }
+        */
 
+        enemy.RB.velocity = new Vector2(moveDirection.x * enemy.moveSpeed, moveDirection.y * enemy.moveSpeed);
+        
+
+        //Animation
         if (moveDirection != Vector2.zero)
         {
             enemy.direction8 = enemy.VectorToDirection(moveDirection);
@@ -66,6 +72,6 @@ public class EnemyWanderState : EnemyState
                     enemy.spriteRenderer.flipX = true;
                     break;
             }
-        }
+        } 
     }
 }

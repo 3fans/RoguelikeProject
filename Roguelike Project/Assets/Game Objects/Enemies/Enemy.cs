@@ -21,15 +21,18 @@ public class Enemy : MonoBehaviour, IDamagable, IDirection, ITriggerCheckable
     public EnemyWanderState WanderState { get; set; }
     public EnemyIdleState IdleState { get; set; }
     public EnemyDamagedState DamagedState { get; set; }
+    public EnemyAttackState AttackState { get; set; }
     public PlayerScript Player { get; set; }
     public bool IsAggroed { get; set; }
     public bool IsWithinStrikingDistance { get; set; }
     #endregion
-
+    public float attackDamage = 1f;
     #region Walk Variables
     public float moveSpeed = 0.1f;
     #endregion
 
+    public float attackTimer = 0;
+    public float attackCooldown = 0.5f;
     private void Awake()
     {
         StateMachine = new EnemyStateMachine();
@@ -37,6 +40,7 @@ public class Enemy : MonoBehaviour, IDamagable, IDirection, ITriggerCheckable
         WanderState = new EnemyWanderState(this, StateMachine);
         IdleState = new EnemyIdleState(this,StateMachine);
         DamagedState = new EnemyDamagedState(this,StateMachine);
+        AttackState = new EnemyAttackState(this,StateMachine);
 
         //Add enemy states instances public EnemyWalkState WalkState { get; set; }
     }
@@ -139,5 +143,14 @@ public class Enemy : MonoBehaviour, IDamagable, IDirection, ITriggerCheckable
     public void SetStrikingDistanceBool(bool isWithinStrikingDistance)
     {
         IsWithinStrikingDistance = isWithinStrikingDistance;
+    }
+
+    public void AttackTimerCountDown()
+    {
+        attackTimer -= Time.deltaTime;
+        if (attackTimer <= 0)
+        {
+            attackTimer = 0;
+        }
     }
 }
