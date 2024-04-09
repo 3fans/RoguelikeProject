@@ -16,6 +16,7 @@ public class PlayerScript : MonoBehaviour, IDamagable, IDirection
     public SpriteRenderer spriteRenderer { get; set; }
     [field: SerializeField] public GameObject projectile {  get; set; }
     [field: SerializeField] public GameObject bombObject { get; set; }
+    [field: SerializeField] public GameObject damageNumberObject { get; set; }
 
     public IDirection.Direction8 direction8 { get; set; } = IDirection.Direction8.E;
 
@@ -61,7 +62,14 @@ public class PlayerScript : MonoBehaviour, IDamagable, IDirection
     public void Damage(float damageAmount)
     {
         CurrentHealth -= damageAmount;
-        Debug.Log(CurrentHealth);
+        float yOffset = 1f;
+        GameObject damageNumber = GameObject.Instantiate(damageNumberObject, new Vector3(RB.position.x, RB.position.y + yOffset, -1), new Quaternion(0, 0, 0, 0));
+        if (damageNumber.GetComponent<ITextDisplay>() != null)
+        {
+            ITextDisplay textDisplay = damageNumber.GetComponent<ITextDisplay>();
+            textDisplay.SetText(damageAmount.ToString());
+            textDisplay.SetColor(Color.red);
+        }
 
         if (CurrentHealth <= 0)
         {

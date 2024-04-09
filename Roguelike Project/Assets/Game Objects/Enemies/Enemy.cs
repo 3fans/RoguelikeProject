@@ -15,6 +15,7 @@ public class Enemy : MonoBehaviour, IDamagable, IDirection, ITriggerCheckable
     public Rigidbody2D RB { get; set; }
     public Animator animator { get; set; }
     public SpriteRenderer spriteRenderer { get; set; }
+    [field: SerializeField] public GameObject damageNumberObject { get; set; }
 
     #region State Machine Variables
     public EnemyStateMachine StateMachine { get; set; }
@@ -68,6 +69,15 @@ public class Enemy : MonoBehaviour, IDamagable, IDirection, ITriggerCheckable
     public void Damage(float damageAmount)
     {
         CurrentHealth -= damageAmount;
+        float yOffset = 0.7f;
+        GameObject damageNumber = GameObject.Instantiate(damageNumberObject, new Vector3(RB.position.x, RB.position.y + yOffset, -1), new Quaternion(0, 0, 0, 0));
+        if (damageNumber.GetComponent<ITextDisplay>() != null)
+        {
+            ITextDisplay textDisplay = damageNumber.GetComponent<ITextDisplay>();
+            textDisplay.SetText(damageAmount.ToString());
+            textDisplay.SetColor(Color.white);
+        }
+
         if (CurrentHealth <= 0)
         {
             Die();
