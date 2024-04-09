@@ -14,7 +14,8 @@ public class PlayerScript : MonoBehaviour, IDamagable, IDirection
     public PlayerControls PlayerControls { get; set; }
     public Animator animator { get; set; }
     public SpriteRenderer spriteRenderer { get; set; }
-    [field: SerializeField] public GameObject projectile {  get; set; } 
+    [field: SerializeField] public GameObject projectile {  get; set; }
+    [field: SerializeField] public GameObject bombObject { get; set; }
 
     public IDirection.Direction8 direction8 { get; set; } = IDirection.Direction8.E;
 
@@ -22,27 +23,35 @@ public class PlayerScript : MonoBehaviour, IDamagable, IDirection
     public PlayerStateMachine StateMachine { get; set; }
     public PlayerWalkState WalkState { get; set; }
     public PlayerAttacKState AttackState { get; set; }
+    public PlayerBombState BombState { get; set; }
     
     #endregion
 
-    #region Walk Variables
+    #region Input and Walk Variables
     public float moveSpeed = 3.0f;
     public InputAction move;
     public InputAction attack;
+    public InputAction secondaryFire;
     #endregion
 
-    public float abilityTimer = 0;
-    public float shootCooldown = 1.5f;
+    #region Attack Variables
+    public float shootTimer = 0;
+    public float bombTimer = 0;
+    public float shootCooldown = 0.8f;
+    public float bombCooldown = 1.5f;
     public float shootDamage = 2f;
     public float bombDamage = 4f;
+    #endregion
 
 
     private void OnEnable()
     {
         move = PlayerControls.Player.Move;
         attack = PlayerControls.Player.Fire;
+        secondaryFire = PlayerControls.Player.SecondFire;
         move.Enable();
         attack.Enable();
+        secondaryFire.Enable();
     }
 
     private void OnDisable()
@@ -72,6 +81,7 @@ public class PlayerScript : MonoBehaviour, IDamagable, IDirection
      
         WalkState = new PlayerWalkState(this, StateMachine);
         AttackState = new PlayerAttacKState(this, StateMachine);
+        BombState = new PlayerBombState(this, StateMachine);
     }
     // Start is called before the first frame update
     void Start()
@@ -95,15 +105,24 @@ public class PlayerScript : MonoBehaviour, IDamagable, IDirection
         StateMachine.CurrentPlayerState.PhysicsUpdate();
     }
 
-    public void AbilityTimerCountDown()
+    public void ShootTimerCountDown()
     {
-        abilityTimer -= Time.deltaTime;
-        if (abilityTimer <= 0)
+        shootTimer -= Time.deltaTime;
+        if (shootTimer <= 0)
         {
-            abilityTimer = 0;
+            shootTimer = 0;
         }
     }
-    
+    public void BombTimerCountDown()
+    {
+        bombTimer -= Time.deltaTime;
+        if (bombTimer <= 0)
+        {
+            bombTimer = 0;
+        }
+    }
+
+
     public Direction8 VectorToDirection(Vector2 vector)
     {
         if (vector == Vector2.zero)

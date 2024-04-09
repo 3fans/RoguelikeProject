@@ -15,6 +15,7 @@ public class PlayerWalkState : PlayerState
 
     Vector2 moveDirection = Vector2.zero;
     bool isAttack = false;
+    bool isBomb = false;
 
     public override void EnterState()
     {
@@ -31,17 +32,24 @@ public class PlayerWalkState : PlayerState
         base.FrameUpdate();
         moveDirection = player.move.ReadValue<Vector2>();
         isAttack = player.attack.IsPressed();
-        player.AbilityTimerCountDown();
+        isBomb = player.secondaryFire.IsPressed();
+        player.ShootTimerCountDown();
+        player.BombTimerCountDown();
 
     }
 
     public override void PhysicsUpdate()
     {
         base.PhysicsUpdate();
-        if (isAttack && player.abilityTimer <= 0)
+        if (isAttack && player.shootTimer <= 0)
         {
             player.StateMachine.ChangeState(player.AttackState);
             
+        }
+        if (isBomb && player.bombTimer <= 0)
+        {
+            player.StateMachine.ChangeState(player.BombState);
+
         }
         player.RB.velocity = new Vector2(moveDirection.x * player.moveSpeed, moveDirection.y * player.moveSpeed);
         if (moveDirection != Vector2.zero)

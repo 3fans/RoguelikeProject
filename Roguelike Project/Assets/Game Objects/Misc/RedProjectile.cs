@@ -1,17 +1,18 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Projectile : MonoBehaviour, IDirection
+public class RedProjectile : MonoBehaviour, IDirection
 {
-    public CircleCollider2D circleCollider;
+    public BoxCollider2D boxCollider;
     public Rigidbody2D RB;
     public Animator animator;
     public PlayerScript Player;
-    private float projSpeed = 5;
+    public float projDamage = 2f;
+    public float projSpeed = 5;
+    
 
-    private float deathTime = 0.2f;
+    private float deathTime = 0.3f;
     bool isDying = false;
 
     public IDirection.Direction8 direction8 { get; set; }
@@ -23,17 +24,17 @@ public class Projectile : MonoBehaviour, IDirection
 
     private void Awake()
     {
-        circleCollider = GetComponent<CircleCollider2D>();
+        boxCollider = GetComponent<BoxCollider2D>();
         animator = GetComponent<Animator>();
         RB = GetComponent<Rigidbody2D>();
         Player = FindFirstObjectByType<PlayerScript>();
 
-        direction8 = Player.direction8;
+        direction8 = IDirection.Direction8.W;
         FixProjectileOffset(direction8);
         RB.rotation = Direction8ToFloat(direction8);
 
     }
-    
+
 
     // Start is called before the first frame update
     void Start()
@@ -57,13 +58,13 @@ public class Projectile : MonoBehaviour, IDirection
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Enemy") || collision.CompareTag("Projectile"))
+        if (collision.CompareTag("Player") || collision.CompareTag("Projectile"))
         {
-            
+
             IDamagable e = collision.GetComponent<IDamagable>();
             if (e != null)
             {
-                e.Damage(Player.shootDamage);
+                e.Damage(projDamage);
             }
 
             animator.SetTrigger("Die");
@@ -87,7 +88,7 @@ public class Projectile : MonoBehaviour, IDirection
 
             case IDirection.Direction8.NE:
                 return 45;
- 
+
             case IDirection.Direction8.N:
                 return 90;
 
@@ -115,7 +116,7 @@ public class Projectile : MonoBehaviour, IDirection
         switch (direction8)
         {
             case IDirection.Direction8.E:
-                return new Vector2(1,0).normalized;
+                return new Vector2(1, 0).normalized;
 
             case IDirection.Direction8.NE:
                 return new Vector2(1, 1).normalized;
