@@ -285,7 +285,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 2301984100485250354, guid: 18eb7d863f69f864cacf1c5df62d7133, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -312,7 +312,7 @@ MonoBehaviour:
   <MaxHealth>k__BackingField: 5
   <damageNumberObject>k__BackingField: {fileID: 712043344554086559, guid: 08d6523af282fc543aaef6797942971d, type: 3}
   attackDamage: 1
-  moveSpeed: 2
+  moveSpeed: 1.5
   attackTimer: 0
   attackCooldown: 0.5
 --- !u!58 &6463248674469994656

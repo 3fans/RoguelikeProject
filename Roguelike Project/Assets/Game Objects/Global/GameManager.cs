@@ -5,25 +5,27 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     GameInstance gameInstance;
-    public Vector2[] enemySpawns = new Vector2[15];
+    public GameObject enemy;
+    public GameObject trap;
+    public Vector2[] enemySpawns = new Vector2[10];
     public Vector2[] trapSpawns = new Vector2[5];
     // Start is called before the first frame update
     void Start()
     {
         gameInstance = FindFirstObjectByType<GameInstance>();
 
-        int numberOfEnemySpawns = gameInstance.LevelNumber * 2 + 1;
+        int numberOfEnemySpawns = gameInstance.LevelNumber * 2 ;
         int numberOfTrapSpawns = gameInstance.LevelNumber;
 
         Vector2[] tempEnemySpawns = ShuffleArray(enemySpawns);
         for (int i = 0; i < numberOfEnemySpawns; i++)
         {
-            print(tempEnemySpawns[i]);
+            GameObject.Instantiate(enemy, tempEnemySpawns[i], new Quaternion(0, 0, 0, 0));
         }
         Vector2[] tempTrapSpawns = ShuffleArray(trapSpawns);
         for (int i = 0;i < numberOfTrapSpawns; i++)
         {
-
+            GameObject.Instantiate(trap, tempTrapSpawns[i], new Quaternion(0, 0, 0, 0));
         }
         
     }
