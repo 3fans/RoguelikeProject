@@ -5,12 +5,35 @@ using UnityEngine.SceneManagement;
 
 public class GameInstance : MonoBehaviour
 {
+    public struct PlayerStats
+    {
+        public float maxHealth;
+        public float shootCooldown;
+        public float bombCooldown;
+        public float shootDamage;
+        public float bombDamage;
+
+        public PlayerStats(float mh, float sc, float bc, float sd, float bd)
+        {
+            maxHealth = mh;
+            shootCooldown = sc;
+            bombCooldown = bc;
+            shootDamage = sd;
+            bombDamage = bd;
+        }
+
+    }
     public enum EGamePhase
     {
         Unknown,
         MainMenu,
         MainLevel
     }
+    public static PlayerStats DefaultPlayerStats = new PlayerStats(2,0.8f,1.5f,2,4);
+    public PlayerStats CurrentPlayerStats = DefaultPlayerStats;
+    
+        
+    
     public EGamePhase Phase {  get; private set; } = EGamePhase.Unknown;
     #region Instance Management
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]

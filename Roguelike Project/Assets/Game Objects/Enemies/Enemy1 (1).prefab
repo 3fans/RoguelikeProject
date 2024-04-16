@@ -147,7 +147,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0.18}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.3
 --- !u!114 &2255685971214139786
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -175,7 +175,7 @@ GameObject:
   - component: {fileID: 4559346162230179239}
   - component: {fileID: 6463248674469994656}
   m_Layer: 0
-  m_Name: Enemy1
+  m_Name: Enemy1 (1)
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -190,7 +190,7 @@ Transform:
   m_GameObject: {fileID: 4212967434869627884}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.663, y: -4.302, z: -0.02300112}
+  m_LocalPosition: {x: 1.374, y: -4.656, z: -0.02300112}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -310,7 +310,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <MaxHealth>k__BackingField: 5
+  <damageNumberObject>k__BackingField: {fileID: 712043344554086559, guid: 08d6523af282fc543aaef6797942971d, type: 3}
+  attackDamage: 1
   moveSpeed: 2
+  attackTimer: 0
+  attackCooldown: 0.5
 --- !u!58 &6463248674469994656
 CircleCollider2D:
   m_ObjectHideFlags: 0

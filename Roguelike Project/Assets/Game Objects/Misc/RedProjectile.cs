@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RedProjectile : MonoBehaviour, IDirection
+public class RedProjectile : MonoBehaviour, IDirection, IProjectile
 {
     public BoxCollider2D boxCollider;
     public Rigidbody2D RB;
@@ -29,16 +29,17 @@ public class RedProjectile : MonoBehaviour, IDirection
         RB = GetComponent<Rigidbody2D>();
         Player = FindFirstObjectByType<PlayerScript>();
 
-        direction8 = IDirection.Direction8.W;
-        FixProjectileOffset(direction8);
-        RB.rotation = Direction8ToFloat(direction8);
-
     }
-
+    public void SetDirection(IDirection.Direction8 direction)
+    {
+        direction8 = direction;
+        RB.rotation = Direction8ToFloat(direction8);
+    }
 
     // Start is called before the first frame update
     void Start()
     {
+        
         Vector2 _direction = Direction8ToVector2(direction8);
         RB.velocity = new Vector2(_direction.x * projSpeed, _direction.y * projSpeed);
     }
@@ -183,4 +184,6 @@ public class RedProjectile : MonoBehaviour, IDirection
                 break;
         }
     }
+
+
 }

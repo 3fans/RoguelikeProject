@@ -276,11 +276,11 @@
                 },
                 {
                     "name": "",
-                    "id": "f0382789-c41e-4e3c-97cd-b382b23002c9",
+                    "id": "be6910de-3db9-4504-9d92-1c51ad137e41",
                     "path": "<HID::Bensussen Deutsch & Associates,Inc.(BDA) Core (Plus) Wired Controller>/button7",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Gamepad",
                     "action": "SecondFire",
                     "isComposite": false,
                     "isPartOfComposite": false
