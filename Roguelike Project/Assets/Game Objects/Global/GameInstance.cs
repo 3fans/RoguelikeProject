@@ -27,6 +27,7 @@ public class GameInstance : MonoBehaviour
     {
         Unknown,
         MainMenu,
+        Lobby,
         MainLevel
     }
     public static PlayerStats DefaultPlayerStats = new PlayerStats(2,0.8f,1.5f,2,4);
@@ -35,6 +36,9 @@ public class GameInstance : MonoBehaviour
         
     
     public EGamePhase Phase {  get; private set; } = EGamePhase.Unknown;
+    public int LevelNumber { get; private set; } = 1;
+
+
     #region Instance Management
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
     public static void LoadPersistentLevel()
@@ -73,6 +77,27 @@ public class GameInstance : MonoBehaviour
     }
     public void OnExitMainMenu()
     {
+        Phase = EGamePhase.Lobby;
+    }
+    public void OnExitLobby()
+    {
         Phase = EGamePhase.MainLevel;
+        LevelNumber = 1;
+        LoadLevel();
+        
+    }
+    public void OnExitLevel()
+    {
+        LevelNumber++;
+        if (LevelNumber >= 3)
+        {
+            Debug.Log("YouWIn");
+        }
+    }
+
+    static string Level1 = "BaseLevel1";
+    private void LoadLevel()
+    {
+        SceneManager.LoadScene(Level1);
     }
 }

@@ -12,6 +12,6 @@ public class MainMenuManager : MonoBehaviour
 
     public void OnPlayGame()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("SampleScene");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Lobby");
     }
 }
