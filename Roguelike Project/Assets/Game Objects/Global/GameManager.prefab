@@ -63,3 +63,11 @@ MonoBehaviour:
   - {x: -0.5, y: -5}
   - {x: 1.5, y: -5}
   - {x: 3.5, y: -3}
+  powerUpSpawns:
+  - {x: -1.5, y: 2}
+  - {x: 1.5, y: 2}
+  PowerUps:
+  - {fileID: 6476766470223539012, guid: 1243a14e1cc29e84c90af3e373eaec25, type: 3}
+  - {fileID: 2551807108243309825, guid: 0186c50f0ec9bf04398e6afbc1caf11f, type: 3}
+  - {fileID: 5958609332992063999, guid: 56e359c91add0204f942b80cc17de4f4, type: 3}
+  - {fileID: 1610192495951451071, guid: d469997bd752aa14cb15973558ee1e9a, type: 3}

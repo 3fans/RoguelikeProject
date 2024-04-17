@@ -58,6 +58,8 @@ public class PlayerScript : MonoBehaviour, IDamagable, IDirection
     private void OnDisable()
     {
         move.Disable();
+        attack.Disable();
+        secondaryFire.Disable();
     }
     public void Damage(float damageAmount)
     {
@@ -79,7 +81,7 @@ public class PlayerScript : MonoBehaviour, IDamagable, IDirection
 
     public void Die()
     {
-        
+        GameInstance.Instance.OnPlayerDeath();
     }
     private void Awake()
     {
@@ -94,7 +96,11 @@ public class PlayerScript : MonoBehaviour, IDamagable, IDirection
     // Start is called before the first frame update
     void Start()
     {
-        CurrentHealth = MaxHealth;
+        CurrentHealth = GameInstance.Instance.CurrentPlayerStats.maxHealth;
+        shootCooldown = GameInstance.Instance.CurrentPlayerStats.shootCooldown;
+        bombCooldown = GameInstance.Instance.CurrentPlayerStats.bombCooldown;
+        shootDamage = GameInstance.Instance.CurrentPlayerStats.shootDamage;
+        bombDamage = GameInstance.Instance.CurrentPlayerStats.bombDamage;
 
         RB = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();

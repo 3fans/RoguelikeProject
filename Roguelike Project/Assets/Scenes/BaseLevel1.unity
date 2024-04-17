@@ -2721,6 +2721,42 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2925969328516554344, guid: 2c3b7ec8746ab2740a07d631f6643f8f, type: 3}
+      propertyPath: PowerUps.Array.data[0]
+      value: 
+      objectReference: {fileID: 6476766470223539012, guid: 1243a14e1cc29e84c90af3e373eaec25, type: 3}
+    - target: {fileID: 2925969328516554344, guid: 2c3b7ec8746ab2740a07d631f6643f8f, type: 3}
+      propertyPath: PowerUps.Array.data[1]
+      value: 
+      objectReference: {fileID: 2551807108243309825, guid: 0186c50f0ec9bf04398e6afbc1caf11f, type: 3}
+    - target: {fileID: 2925969328516554344, guid: 2c3b7ec8746ab2740a07d631f6643f8f, type: 3}
+      propertyPath: PowerUps.Array.data[2]
+      value: 
+      objectReference: {fileID: 5958609332992063999, guid: 56e359c91add0204f942b80cc17de4f4, type: 3}
+    - target: {fileID: 2925969328516554344, guid: 2c3b7ec8746ab2740a07d631f6643f8f, type: 3}
+      propertyPath: PowerUps.Array.data[3]
+      value: 
+      objectReference: {fileID: 1610192495951451071, guid: d469997bd752aa14cb15973558ee1e9a, type: 3}
+    - target: {fileID: 2925969328516554344, guid: 2c3b7ec8746ab2740a07d631f6643f8f, type: 3}
+      propertyPath: powerUpSpawns.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2925969328516554344, guid: 2c3b7ec8746ab2740a07d631f6643f8f, type: 3}
+      propertyPath: powerUpSpawns.Array.data[0].x
+      value: -1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2925969328516554344, guid: 2c3b7ec8746ab2740a07d631f6643f8f, type: 3}
+      propertyPath: powerUpSpawns.Array.data[0].y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2925969328516554344, guid: 2c3b7ec8746ab2740a07d631f6643f8f, type: 3}
+      propertyPath: powerUpSpawns.Array.data[1].x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2925969328516554344, guid: 2c3b7ec8746ab2740a07d631f6643f8f, type: 3}
+      propertyPath: powerUpSpawns.Array.data[1].y
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5152315778029726291, guid: 2c3b7ec8746ab2740a07d631f6643f8f, type: 3}
       propertyPath: m_Name
       value: GameManager

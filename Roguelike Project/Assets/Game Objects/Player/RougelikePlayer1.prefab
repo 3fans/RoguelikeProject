@@ -215,6 +215,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <MaxHealth>k__BackingField: 5
+  <projectile>k__BackingField: {fileID: 0}
+  <bombObject>k__BackingField: {fileID: 0}
+  <damageNumberObject>k__BackingField: {fileID: 0}
   moveSpeed: 3
   move:
     m_Name: Move
@@ -225,3 +228,27 @@ MonoBehaviour:
     m_Interactions: 
     m_SingletonActionBindings: []
     m_Flags: 0
+  attack:
+    m_Name: Attack
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 5ef61ee1-0176-4746-ba11-def4da5468bf
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
+  secondaryFire:
+    m_Name: Secondary Fire
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 984e86c6-037d-442c-a81c-87c4d1412078
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
+  shootTimer: 0
+  bombTimer: 0
+  shootCooldown: 0.8
+  bombCooldown: 1.5
+  shootDamage: 2
+  bombDamage: 4

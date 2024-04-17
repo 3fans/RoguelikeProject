@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -8,12 +9,16 @@ public class GameManager : MonoBehaviour
     GameInstance gameInstance;
     public GameObject enemy;
     public GameObject trap;
+
     public Vector2[] enemySpawns = new Vector2[10];
     public Vector2[] trapSpawns = new Vector2[5];
+    public Vector2[] powerUpSpawns = new Vector2[2];
+    public GameObject[] PowerUps = new GameObject[4];
+
     int numberOfEnemySpawns;
     int numberOfTrapSpawns;
     int enemiesRemaining;
-    // Start is called before the first frame update
+
     void Start()
     {
         gameInstance = FindFirstObjectByType<GameInstance>();
@@ -39,7 +44,10 @@ public class GameManager : MonoBehaviour
         numberOfEnemySpawns--;
         if (numberOfEnemySpawns == 0)
         {
-            //Next level
+            GameInstance.Instance.OnExitLevel();
+            ShuffleGameObjects(PowerUps);
+            GameObject.Instantiate(PowerUps[0], powerUpSpawns[0], new Quaternion(0, 0, 0, 0));
+            GameObject.Instantiate(PowerUps[1], powerUpSpawns[1], new Quaternion(0, 0, 0, 0));
         }
     }
     Vector2[] ShuffleArray(Vector2[] vector2s)
@@ -52,5 +60,18 @@ public class GameManager : MonoBehaviour
             vector2s[randomizeArray] = vec;
         }
         return vector2s;
+    }
+
+    GameObject[] ShuffleGameObjects(GameObject[] gameObjects)
+    {
+        for (int i = 0; i < gameObjects.Length; i++)
+        {
+            GameObject obj = gameObjects[i];
+            int randomizeObj = UnityEngine.Random.Range(0, i);
+            gameObjects[i] = gameObjects[randomizeObj];
+            gameObjects[randomizeObj] = obj;
+        }
+        return gameObjects;
+
     }
 }

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -32,11 +33,29 @@ public class GameInstance : MonoBehaviour
     }
     public static PlayerStats DefaultPlayerStats = new PlayerStats(2,0.8f,1.5f,2,4);
     public PlayerStats CurrentPlayerStats = DefaultPlayerStats;
-    
-        
-    
+    private static float ProjSpeedMultipier = 1.5f;
+    private static float ProjDamageMultipier = 1.5f;
+    private static float BombSpeedMultipier = 1.5f;
+    private static float BombDamageMultipier = 2f;
+    public void OnProjSpeedPowerup()
+    {
+        CurrentPlayerStats.shootCooldown /= ProjSpeedMultipier;
+    }
+    public void OnProjDamagePowerup()
+    {
+        CurrentPlayerStats.shootDamage *= ProjDamageMultipier;
+    }
+    public void OnBombSpeedPowerup()
+    {
+        CurrentPlayerStats.bombCooldown /= BombSpeedMultipier;
+    }
+    public void OnBombDamagePowerup()
+    {
+        CurrentPlayerStats.bombDamage *= BombDamageMultipier;
+    }
+
     public EGamePhase Phase {  get; private set; } = EGamePhase.Unknown;
-    public int LevelNumber { get; private set; } = 1;
+    [field: SerializeField] public int LevelNumber { get; private set; } = 1;
 
 
     #region Instance Management
@@ -85,16 +104,17 @@ public class GameInstance : MonoBehaviour
         Phase = EGamePhase.MainLevel;
         LevelNumber = 1;
         levelOrder = ShuffleArray(levelNames);
+        CurrentPlayerStats = DefaultPlayerStats;
         LoadLevel();
         
     }
     public void OnExitLevel()
     {
-        LevelNumber++;
         if (LevelNumber >= 3)
         {
-            Debug.Log("YouWIn");
+            OnPlayerWin();
         }
+        LevelNumber++;
     }
     #region LevelNames
     static string Level1 = "BaseLevel1";
@@ -104,7 +124,7 @@ public class GameInstance : MonoBehaviour
     static string Level5 = "BaseLevel5";
     static string Level6 = "BaseLevel6";
     string[] levelNames = {Level1,Level2,Level3,Level4,Level5,Level6};
-    string[] levelOrder;
+    string[] levelOrder = { Level1, Level2, Level3, Level4, Level5, Level6 };
     #endregion
     string[] ShuffleArray(string[] levelnames)
     {
@@ -118,8 +138,19 @@ public class GameInstance : MonoBehaviour
         return levelnames;
     }
 
-    private void LoadLevel()
+    public void LoadLevel()
     {
         SceneManager.LoadScene(levelOrder[LevelNumber - 1]);
     }
+
+    public void OnPlayerDeath()
+    {
+        SceneManager.LoadScene("Lobby");
+    }
+
+    public void OnPlayerWin()
+    {
+        SceneManager.LoadScene("WinScreen");
+    }
+
 }
