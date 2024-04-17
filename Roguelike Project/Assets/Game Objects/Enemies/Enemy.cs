@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Assertions.Must;
 using UnityEngine.InputSystem;
 using static IDirection;
 
@@ -10,6 +11,7 @@ public class Enemy : MonoBehaviour, IDamagable, IDirection, ITriggerCheckable
 {
 
     [field: SerializeField] public float MaxHealth { get; set; } = 5;
+    private float healthScaling = 1.5f;
     public float CurrentHealth { get; set; }
     public IDirection.Direction8 direction8 { get; set; } = Direction8.E;
     public Rigidbody2D RB { get; set; }
@@ -48,8 +50,9 @@ public class Enemy : MonoBehaviour, IDamagable, IDirection, ITriggerCheckable
     }
     void Start()
     {
-        CurrentHealth = MaxHealth;
-
+        float pow = GameInstance.Instance.LevelNumber - 1;
+        CurrentHealth = MaxHealth * Mathf.Pow(healthScaling, pow);
+        
         RB = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();

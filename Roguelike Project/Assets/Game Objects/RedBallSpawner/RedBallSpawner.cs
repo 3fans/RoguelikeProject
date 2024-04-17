@@ -6,6 +6,7 @@ public class RedBallSpawner : MonoBehaviour, IDamagable
 {
     [field: SerializeField] public float MaxHealth { get; set; }
     public float CurrentHealth { get; set; }
+    private float healthScaling = 1.5f;
     [field: SerializeField] public GameObject projectile { get; set; }
     [field: SerializeField] public GameObject damageNumberObject { get; set; }
     public Rigidbody2D RB;
@@ -42,7 +43,9 @@ public class RedBallSpawner : MonoBehaviour, IDamagable
     void Start()
     {
         RB = GetComponent<Rigidbody2D>();
-        CurrentHealth = MaxHealth;
+
+        float pow = GameInstance.Instance.LevelNumber - 1;
+        CurrentHealth = MaxHealth * Mathf.Pow(healthScaling, pow);
         shootTimer = shootCooldown;
     }
 

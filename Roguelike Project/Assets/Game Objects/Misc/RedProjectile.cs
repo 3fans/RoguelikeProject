@@ -59,7 +59,7 @@ public class RedProjectile : MonoBehaviour, IDirection, IProjectile
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player") || collision.CompareTag("Projectile"))
+        if (collision.CompareTag("Player") || collision.CompareTag("PlayerProj"))
         {
 
             IDamagable e = collision.GetComponent<IDamagable>();

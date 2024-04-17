@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class GameInstance : MonoBehaviour
 {
-    public int TotalNumberLevels = 4;
+    public int TotalNumberLevels = 5;
     public struct PlayerStats
     {
         public float maxHealth;

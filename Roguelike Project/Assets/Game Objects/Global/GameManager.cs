@@ -45,6 +45,11 @@ public class GameManager : MonoBehaviour
         if (numberOfEnemySpawns == 0)
         {
             GameInstance.Instance.OnExitLevel();
+            RedBallSpawner[] spawners = FindObjectsOfType<RedBallSpawner>();
+            for (int i = 0; i<spawners.Length; i++)
+            {
+                spawners[i].Die();
+            }
             ShuffleGameObjects(PowerUps);
             GameObject.Instantiate(PowerUps[0], powerUpSpawns[0], new Quaternion(0, 0, 0, 0));
             GameObject.Instantiate(PowerUps[1], powerUpSpawns[1], new Quaternion(0, 0, 0, 0));
