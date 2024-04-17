@@ -78,11 +78,13 @@ public class GameInstance : MonoBehaviour
     public void OnExitMainMenu()
     {
         Phase = EGamePhase.Lobby;
+        
     }
     public void OnExitLobby()
     {
         Phase = EGamePhase.MainLevel;
         LevelNumber = 1;
+        levelOrder = ShuffleArray(levelNames);
         LoadLevel();
         
     }
@@ -94,10 +96,30 @@ public class GameInstance : MonoBehaviour
             Debug.Log("YouWIn");
         }
     }
-
+    #region LevelNames
     static string Level1 = "BaseLevel1";
+    static string Level2 = "BaseLevel2";
+    static string Level3 = "BaseLevel3";
+    static string Level4 = "BaseLevel4";
+    static string Level5 = "BaseLevel5";
+    static string Level6 = "BaseLevel6";
+    string[] levelNames = {Level1,Level2,Level3,Level4,Level5,Level6};
+    string[] levelOrder;
+    #endregion
+    string[] ShuffleArray(string[] levelnames)
+    {
+        for (int i = 0; i < levelnames.Length; i++)
+        {
+            string str = levelnames[i];
+            int randomizeArray = UnityEngine.Random.Range(0, i);
+            levelnames[i] = levelnames[randomizeArray];
+            levelnames[randomizeArray] = str;
+        }
+        return levelnames;
+    }
+
     private void LoadLevel()
     {
-        SceneManager.LoadScene(Level1);
+        SceneManager.LoadScene(levelOrder[LevelNumber - 1]);
     }
 }

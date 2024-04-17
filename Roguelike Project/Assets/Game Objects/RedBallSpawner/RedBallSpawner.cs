@@ -17,7 +17,7 @@ public class RedBallSpawner : MonoBehaviour, IDamagable
     public void Damage(float damageAmount)
     {
         CurrentHealth -= damageAmount;
-        float yOffset = 1f;
+        float yOffset = 1.5f;
         GameObject damageNumber = GameObject.Instantiate(damageNumberObject, new Vector3(RB.position.x, RB.position.y + yOffset, -1), new Quaternion(0, 0, 0, 0));
         if (damageNumber.GetComponent<ITextDisplay>() != null)
         {

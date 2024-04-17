@@ -21,6 +21,21 @@ EditorBuildSettings:
     path: Assets/Scenes/BaseLevel2.unity
     guid: ba7d984dae4f5a443bf470739afd5617
   - enabled: 1
+    path: Assets/Scenes/BaseLevel3.unity
+    guid: 580b548ed1b261e4cb98d9be8f03f0d3
+  - enabled: 1
+    path: Assets/Scenes/BaseLevel4.unity
+    guid: ef32a9889e0e9884bb1d252232a16d2a
+  - enabled: 1
+    path: Assets/Scenes/BaseLevel5.unity
+    guid: 598c294c5668a834e97afae6deaf7aab
+  - enabled: 1
+    path: Assets/Scenes/BaseLevel6.unity
+    guid: b00fe8da204fc3e45bb857d217a79f27
+  - enabled: 1
     path: Assets/Scenes/Lobby.unity
     guid: a9637c47b94797244ad068744423af67
+  - enabled: 1
+    path: Assets/Scenes/WinScreen.unity
+    guid: 0bbd68f2fc8bef545b87dee88dbc687b
   m_configObjects: {}

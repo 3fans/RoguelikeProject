@@ -12,6 +12,7 @@ public class MainMenuManager : MonoBehaviour
 
     public void OnPlayGame()
     {
+        GameInstance.Instance.OnExitMainMenu();
         UnityEngine.SceneManagement.SceneManager.LoadScene("Lobby");
     }
 }

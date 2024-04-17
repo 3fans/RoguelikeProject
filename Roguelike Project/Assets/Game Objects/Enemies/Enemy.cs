@@ -16,6 +16,7 @@ public class Enemy : MonoBehaviour, IDamagable, IDirection, ITriggerCheckable
     public Animator animator { get; set; }
     public SpriteRenderer spriteRenderer { get; set; }
     [field: SerializeField] public GameObject damageNumberObject { get; set; }
+    public GameManager gameManager { get; private set; }
 
     #region State Machine Variables
     public EnemyStateMachine StateMachine { get; set; }
@@ -53,6 +54,7 @@ public class Enemy : MonoBehaviour, IDamagable, IDirection, ITriggerCheckable
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         Player = FindFirstObjectByType<PlayerScript>();
+        gameManager = FindFirstObjectByType<GameManager>();
 
         StateMachine.Initialize(IdleState);
     }
@@ -88,6 +90,7 @@ public class Enemy : MonoBehaviour, IDamagable, IDirection, ITriggerCheckable
     public void Die()
     {
         //Death animation
+        gameManager.OnEnemyDeath();
         Destroy(gameObject);
     }
 
