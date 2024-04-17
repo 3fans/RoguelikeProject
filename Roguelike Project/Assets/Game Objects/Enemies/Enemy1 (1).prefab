@@ -309,10 +309,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2760793ca6d54e4cafdc73b34e5ba25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <MaxHealth>k__BackingField: 5
+  <MaxHealth>k__BackingField: 8
   <damageNumberObject>k__BackingField: {fileID: 712043344554086559, guid: 08d6523af282fc543aaef6797942971d, type: 3}
   attackDamage: 1
-  moveSpeed: 1.5
+  moveSpeed: 1.2
   attackTimer: 0
   attackCooldown: 0.5
 --- !u!58 &6463248674469994656

@@ -197,5 +197,5 @@ MonoBehaviour:
   RB: {fileID: 0}
   animator: {fileID: 0}
   Player: {fileID: 0}
-  projDamage: 2
-  projSpeed: 3
+  projDamage: 1
+  projSpeed: 2.5

@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class GameInstance : MonoBehaviour
 {
+    public int TotalNumberLevels = 4;
     public struct PlayerStats
     {
         public float maxHealth;
@@ -33,10 +34,10 @@ public class GameInstance : MonoBehaviour
     }
     public static PlayerStats DefaultPlayerStats = new PlayerStats(2,0.8f,1.5f,2,4);
     public PlayerStats CurrentPlayerStats = DefaultPlayerStats;
-    private static float ProjSpeedMultipier = 1.5f;
-    private static float ProjDamageMultipier = 1.5f;
-    private static float BombSpeedMultipier = 1.5f;
-    private static float BombDamageMultipier = 2f;
+    private static float ProjSpeedMultipier = 2f;
+    private static float ProjDamageMultipier = 3f;
+    private static float BombSpeedMultipier = 2f;
+    private static float BombDamageMultipier = 3f;
     public void OnProjSpeedPowerup()
     {
         CurrentPlayerStats.shootCooldown /= ProjSpeedMultipier;
@@ -110,7 +111,7 @@ public class GameInstance : MonoBehaviour
     }
     public void OnExitLevel()
     {
-        if (LevelNumber >= 3)
+        if (LevelNumber >= TotalNumberLevels)
         {
             OnPlayerWin();
         }

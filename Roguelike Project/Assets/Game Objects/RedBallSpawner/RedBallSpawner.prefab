@@ -163,7 +163,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d3768080f6e6a249a72b0b95de5e3c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <MaxHealth>k__BackingField: 7
+  <MaxHealth>k__BackingField: 10
   <projectile>k__BackingField: {fileID: 641938332235043945, guid: fc9941998a851124da370fc6b1cde328, type: 3}
   <damageNumberObject>k__BackingField: {fileID: 712043344554086559, guid: 08d6523af282fc543aaef6797942971d, type: 3}
   RB: {fileID: 0}
