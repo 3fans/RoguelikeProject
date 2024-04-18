@@ -32,7 +32,7 @@ public class GameInstance : MonoBehaviour
         Lobby,
         MainLevel
     }
-    public static PlayerStats DefaultPlayerStats = new PlayerStats(2,0.8f,1.5f,2,4);
+    public static PlayerStats DefaultPlayerStats = new PlayerStats(3,0.8f,1.5f,2,4);
     public PlayerStats CurrentPlayerStats = DefaultPlayerStats;
     private static float ProjSpeedMultipier = 2f;
     private static float ProjDamageMultipier = 3f;

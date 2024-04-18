@@ -10,6 +10,7 @@ public class PlayerScript : MonoBehaviour, IDamagable, IDirection
 
     [field: SerializeField] public float MaxHealth { get; set; } = 5;
     public float CurrentHealth { get; set; }
+    private float startHealth = 0;
     public Rigidbody2D RB { get; set; }
     public PlayerControls PlayerControls { get; set; }
     public Animator animator { get; set; }
@@ -64,8 +65,9 @@ public class PlayerScript : MonoBehaviour, IDamagable, IDirection
     public void Damage(float damageAmount)
     {
         CurrentHealth -= damageAmount;
+        LifeIndicator();
         float yOffset = 1f;
-        GameObject damageNumber = GameObject.Instantiate(damageNumberObject, new Vector3(RB.position.x, RB.position.y + yOffset, -1), new Quaternion(0, 0, 0, 0));
+        GameObject damageNumber = GameObject.Instantiate(damageNumberObject, new Vector3(RB.position.x, RB.position.y + yOffset, 0), new Quaternion(0, 0, 0, 0));
         if (damageNumber.GetComponent<ITextDisplay>() != null)
         {
             ITextDisplay textDisplay = damageNumber.GetComponent<ITextDisplay>();
@@ -101,6 +103,7 @@ public class PlayerScript : MonoBehaviour, IDamagable, IDirection
         bombCooldown = GameInstance.Instance.CurrentPlayerStats.bombCooldown;
         shootDamage = GameInstance.Instance.CurrentPlayerStats.shootDamage;
         bombDamage = GameInstance.Instance.CurrentPlayerStats.bombDamage;
+        startHealth = CurrentHealth;
 
         RB = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
@@ -134,6 +137,11 @@ public class PlayerScript : MonoBehaviour, IDamagable, IDirection
         {
             bombTimer = 0;
         }
+    }
+    private void LifeIndicator()
+    {
+        float gb = CurrentHealth / startHealth;
+        spriteRenderer.color = new Color(255, gb, gb);
     }
 
 

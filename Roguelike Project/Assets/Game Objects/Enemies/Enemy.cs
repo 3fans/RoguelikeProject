@@ -17,6 +17,7 @@ public class Enemy : MonoBehaviour, IDamagable, IDirection, ITriggerCheckable
     public Rigidbody2D RB { get; set; }
     public Animator animator { get; set; }
     public SpriteRenderer spriteRenderer { get; set; }
+    private float startHealth = 0;
     [field: SerializeField] public GameObject damageNumberObject { get; set; }
     public GameManager gameManager { get; private set; }
 
@@ -52,7 +53,7 @@ public class Enemy : MonoBehaviour, IDamagable, IDirection, ITriggerCheckable
     {
         float pow = GameInstance.Instance.LevelNumber - 1;
         CurrentHealth = MaxHealth * Mathf.Pow(healthScaling, pow);
-        
+        startHealth = CurrentHealth;
         RB = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -74,6 +75,7 @@ public class Enemy : MonoBehaviour, IDamagable, IDirection, ITriggerCheckable
     public void Damage(float damageAmount)
     {
         CurrentHealth -= damageAmount;
+        LifeIndicator();
         float yOffset = 0.7f;
         GameObject damageNumber = GameObject.Instantiate(damageNumberObject, new Vector3(RB.position.x, RB.position.y + yOffset, -1), new Quaternion(0, 0, 0, 0));
         if (damageNumber.GetComponent<ITextDisplay>() != null)
@@ -168,5 +170,11 @@ public class Enemy : MonoBehaviour, IDamagable, IDirection, ITriggerCheckable
         {
             attackTimer = 0;
         }
+    }
+
+    private void LifeIndicator()
+    {
+        float gb = CurrentHealth / startHealth;
+        spriteRenderer.color = new Color(255, gb, gb);
     }
 }

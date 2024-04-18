@@ -7,6 +7,8 @@ public class RedBallSpawner : MonoBehaviour, IDamagable
     [field: SerializeField] public float MaxHealth { get; set; }
     public float CurrentHealth { get; set; }
     private float healthScaling = 1.5f;
+    private float startHealth = 0;
+    public SpriteRenderer spriteRenderer;
     [field: SerializeField] public GameObject projectile { get; set; }
     [field: SerializeField] public GameObject damageNumberObject { get; set; }
     public Rigidbody2D RB;
@@ -18,6 +20,7 @@ public class RedBallSpawner : MonoBehaviour, IDamagable
     public void Damage(float damageAmount)
     {
         CurrentHealth -= damageAmount;
+        LifeIndicator();
         float yOffset = 1.5f;
         GameObject damageNumber = GameObject.Instantiate(damageNumberObject, new Vector3(RB.position.x, RB.position.y + yOffset, -1), new Quaternion(0, 0, 0, 0));
         if (damageNumber.GetComponent<ITextDisplay>() != null)
@@ -43,9 +46,11 @@ public class RedBallSpawner : MonoBehaviour, IDamagable
     void Start()
     {
         RB = GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
 
         float pow = GameInstance.Instance.LevelNumber - 1;
         CurrentHealth = MaxHealth * Mathf.Pow(healthScaling, pow);
+        startHealth = CurrentHealth;
         shootTimer = shootCooldown;
     }
 
@@ -58,6 +63,11 @@ public class RedBallSpawner : MonoBehaviour, IDamagable
             shootTimer = shootCooldown;
         }
         shootTimer -= Time.deltaTime;
+    }
+    private void LifeIndicator()
+    {
+        float gb = CurrentHealth / startHealth;
+        spriteRenderer.color = new Color(255, gb, gb);
     }
 
     void SpawnProjectiles()
