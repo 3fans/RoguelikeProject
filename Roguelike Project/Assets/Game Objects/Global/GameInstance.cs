@@ -166,27 +166,21 @@ public class GameInstance : MonoBehaviour
     public void OnPlayerDeath()
     {
         SceneManager.LoadScene("Lobby");
-        death = true;
+        isDead = true;
     }
 
     public void OnPlayerWin()
     {
         SceneManager.LoadScene("WinScreen");
-        win = true;
     }
-    bool death = false;
-    bool win = false;
+    bool isDead = false;
+
     private void Update()
     {
-        if (death)
+        if (isDead)
         {
-            death = false;
+            isDead = false;
             GameObject.Instantiate(loseAudio);
-        }
-        if (win)
-        {
-            win = false;
-            GameObject.Instantiate(winAudio);
         }
     }
 

@@ -9,6 +9,7 @@ public class Bomb : MonoBehaviour
     public Rigidbody2D RB;
     public Animator animator;
     public PlayerScript Player;
+    public GameObject bombSound;
 
     float deathTime = 1.2f;
     private void Awake()
@@ -28,6 +29,7 @@ public class Bomb : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        bool isActivated = false;
         deathTime -= Time.deltaTime;
         if (deathTime < 0)
         {
@@ -36,6 +38,11 @@ public class Bomb : MonoBehaviour
         if (deathTime <= 0.15)
         {
             circleCollider.enabled = true;
+            if (isActivated)
+            {
+                isActivated = false;
+                GameObject.Instantiate(bombSound);
+            }
         }
         
     }

@@ -187,3 +187,4 @@ MonoBehaviour:
   RB: {fileID: 0}
   animator: {fileID: 0}
   Player: {fileID: 0}
+  bombSound: {fileID: 7152344070490692868, guid: ea7f388e8cf53d94aaaf35f15077a2c4, type: 3}
