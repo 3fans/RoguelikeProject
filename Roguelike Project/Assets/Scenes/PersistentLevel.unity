@@ -155,6 +155,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TotalNumberLevels: 5
   <LevelNumber>k__BackingField: 1
+  winAudio: {fileID: 7152344070490692868, guid: 0c1379c8b035a40498c6ee6de8ea683d, type: 3}
+  loseAudio: {fileID: 7152344070490692868, guid: 208d4b5ea58df374aade78102d2eff0a, type: 3}
+  gameVolume: 0
 --- !u!4 &1664144689
 Transform:
   m_ObjectHideFlags: 0

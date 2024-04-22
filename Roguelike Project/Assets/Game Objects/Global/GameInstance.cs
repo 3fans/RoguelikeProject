@@ -96,7 +96,9 @@ public class GameInstance : MonoBehaviour
     }
     #endregion
     #region Audio
-    private float gameVolume;
+    public GameObject winAudio;
+    public GameObject loseAudio;
+    public float gameVolume;
     private AudioSource backgroundMusic;
     public void SetVolume(float volume)
     {
@@ -127,6 +129,7 @@ public class GameInstance : MonoBehaviour
     }
     public void OnExitLevel()
     {
+        GameObject.Instantiate(winAudio);
         if (LevelNumber >= TotalNumberLevels)
         {
             OnPlayerWin();
@@ -163,11 +166,28 @@ public class GameInstance : MonoBehaviour
     public void OnPlayerDeath()
     {
         SceneManager.LoadScene("Lobby");
+        death = true;
     }
 
     public void OnPlayerWin()
     {
         SceneManager.LoadScene("WinScreen");
+        win = true;
+    }
+    bool death = false;
+    bool win = false;
+    private void Update()
+    {
+        if (death)
+        {
+            death = false;
+            GameObject.Instantiate(loseAudio);
+        }
+        if (win)
+        {
+            win = false;
+            GameObject.Instantiate(winAudio);
+        }
     }
 
 }
