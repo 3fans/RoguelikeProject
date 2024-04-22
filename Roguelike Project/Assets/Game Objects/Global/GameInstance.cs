@@ -94,11 +94,14 @@ public class GameInstance : MonoBehaviour
     public void OnEnterMainMenu()
     {
         Phase = EGamePhase.MainMenu;
+        AudioSource backgroundMusic = GetComponent<AudioSource>();
+        backgroundMusic.Play();
     }
     public void OnExitMainMenu()
     {
         Phase = EGamePhase.Lobby;
-        
+
+
     }
     public void OnExitLobby()
     {
