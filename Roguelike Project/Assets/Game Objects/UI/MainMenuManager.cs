@@ -15,4 +15,9 @@ public class MainMenuManager : MonoBehaviour
         GameInstance.Instance.OnExitMainMenu();
         UnityEngine.SceneManagement.SceneManager.LoadScene("Lobby");
     }
+
+    public void OnVolumeChange(float volume)
+    {
+        GameInstance.Instance.SetVolume(volume);
+    }
 }

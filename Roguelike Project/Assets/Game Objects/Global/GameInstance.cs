@@ -7,6 +7,11 @@ using UnityEngine.SceneManagement;
 public class GameInstance : MonoBehaviour
 {
     public int TotalNumberLevels = 5;
+    private void Start()
+    {
+        backgroundMusic = GetComponent<AudioSource>();
+        backgroundMusic.Play();
+    }
     public struct PlayerStats
     {
         public float maxHealth;
@@ -90,11 +95,19 @@ public class GameInstance : MonoBehaviour
         DontDestroyOnLoad(Instance);
     }
     #endregion
-
+    #region Audio
+    private float gameVolume;
+    private AudioSource backgroundMusic;
+    public void SetVolume(float volume)
+    {
+        gameVolume = volume;
+        backgroundMusic.volume = gameVolume;
+    }
+    #endregion
     public void OnEnterMainMenu()
     {
         Phase = EGamePhase.MainMenu;
-        AudioSource backgroundMusic = GetComponent<AudioSource>();
+        SetVolume(0.5f);
         backgroundMusic.Play();
     }
     public void OnExitMainMenu()
