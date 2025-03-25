@@ -4,6 +4,12 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using static IDirection;
 
+
+/*
+ * Main script controlling player character and managing statemachine
+ * See player state scripts for state-specific behavior
+ */
+
 public class PlayerScript : MonoBehaviour, IDamagable, IDirection
 {
 
@@ -24,7 +30,7 @@ public class PlayerScript : MonoBehaviour, IDamagable, IDirection
     #region State Machine Variables
     public PlayerStateMachine StateMachine { get; set; }
     public PlayerWalkState WalkState { get; set; }
-    public PlayerAttacKState AttackState { get; set; }
+    public PlayerAttackState AttackState { get; set; }
     public PlayerBombState BombState { get; set; }
     
     #endregion
@@ -45,7 +51,9 @@ public class PlayerScript : MonoBehaviour, IDamagable, IDirection
     public float bombDamage = 4f;
     #endregion
 
-
+    /*
+     * Initialize player movement controlls
+     */
     private void OnEnable()
     {
         move = PlayerControls.Player.Move;
@@ -62,6 +70,12 @@ public class PlayerScript : MonoBehaviour, IDamagable, IDirection
         attack.Disable();
         secondaryFire.Disable();
     }
+
+   /*
+    * Update player dameage
+    * Create floting damage number object
+    * Check if player is dead
+    */
     public void Damage(float damageAmount)
     {
         CurrentHealth -= damageAmount;
@@ -85,6 +99,11 @@ public class PlayerScript : MonoBehaviour, IDamagable, IDirection
     {
         GameInstance.Instance.OnPlayerDeath();
     }
+
+    /*
+     * Iniyialize state machine
+     * Three different states of WalkState, AttackState, BombState
+     */
     private void Awake()
     {
         PlayerControls = new PlayerControls();
@@ -92,10 +111,17 @@ public class PlayerScript : MonoBehaviour, IDamagable, IDirection
         StateMachine = new PlayerStateMachine();
      
         WalkState = new PlayerWalkState(this, StateMachine);
-        AttackState = new PlayerAttacKState(this, StateMachine);
+        AttackState = new PlayerAttackState(this, StateMachine);
         BombState = new PlayerBombState(this, StateMachine);
     }
-    // Start is called before the first frame update
+
+    /*
+     * Get current player stats from global GameInstance
+     * This is needed because of player updating every level
+     * 
+     * Initialize rigidbody, animator, and sprite renderer
+     * Initial player state is WalkState
+     */
     void Start()
     {
         CurrentHealth = GameInstance.Instance.CurrentPlayerStats.maxHealth;
@@ -112,11 +138,17 @@ public class PlayerScript : MonoBehaviour, IDamagable, IDirection
         StateMachine.Initialize(WalkState);
     }
 
+    /*
+     * Needed to work with statemachine framework
+     */
     private void Update()
     {
         StateMachine.CurrentPlayerState.FrameUpdate();
     }
 
+    /*
+     * Needed to work with statemachine framework
+     */
     private void FixedUpdate()
     {
         StateMachine.CurrentPlayerState.PhysicsUpdate();
@@ -144,7 +176,10 @@ public class PlayerScript : MonoBehaviour, IDamagable, IDirection
         spriteRenderer.color = new Color(255, gb, gb);
     }
 
-
+    /*
+     * Gets the way player is facign and returns one of 8 cardinal directions,
+     * This approach improves code readability
+     */
     public Direction8 VectorToDirection(Vector2 vector)
     {
         if (vector == Vector2.zero)

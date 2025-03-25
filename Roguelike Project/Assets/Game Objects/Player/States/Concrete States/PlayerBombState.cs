@@ -20,8 +20,6 @@ public class PlayerBombState : PlayerState
     public override void ExitState()
     {
         base.ExitState();
-
-
     }
 
     public override void FrameUpdate()

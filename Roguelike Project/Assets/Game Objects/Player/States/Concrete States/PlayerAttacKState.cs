@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerAttacKState : PlayerState
+public class PlayerAttackState : PlayerState
 {
-    public PlayerAttacKState(PlayerScript player, PlayerStateMachine playerStateMachine) : base(player, playerStateMachine)
+    public PlayerAttackState(PlayerScript player, PlayerStateMachine playerStateMachine) : base(player, playerStateMachine)
     {
     }
 

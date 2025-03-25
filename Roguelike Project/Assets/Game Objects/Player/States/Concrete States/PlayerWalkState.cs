@@ -4,8 +4,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+/*
+ * Logic for when player is walking (default state)
+ */
+
 public class PlayerWalkState : PlayerState
 {
+    /*
+     * Used for switching animations
+     */
     const string TWalkN = "TWalkN";
     const string TWalkS = "TWalkS";
     const string TWalkE = "TWalkE";
@@ -37,7 +44,10 @@ public class PlayerWalkState : PlayerState
         player.BombTimerCountDown();
 
     }
-
+    /*
+     * Checks for shooting or bomb inputs and changes state
+     * Sets velocity to current player input then adjusts animation to match
+     */
     public override void PhysicsUpdate()
     {
         base.PhysicsUpdate();
